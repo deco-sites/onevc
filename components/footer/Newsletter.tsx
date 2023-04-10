@@ -1,4 +1,4 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
 
 function Newsletter() {
   return (

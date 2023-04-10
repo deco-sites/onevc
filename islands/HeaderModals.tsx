@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/header/Modals.tsx";
+export { default } from "deco-sites/onevc/components/header/Modals.tsx";

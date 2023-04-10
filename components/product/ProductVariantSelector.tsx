@@ -1,6 +1,6 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import Avatar from "deco-sites/fashion/components/ui/Avatar.tsx";
-import { useVariantPossibilities } from "deco-sites/fashion/sdk/useVariantPossiblities.ts";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import Avatar from "deco-sites/onevc/components/ui/Avatar.tsx";
+import { useVariantPossibilities } from "deco-sites/onevc/sdk/useVariantPossiblities.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
 
 interface Props {

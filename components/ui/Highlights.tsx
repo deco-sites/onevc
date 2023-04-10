@@ -1,7 +1,7 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import { Slider } from "deco-sites/onevc/components/ui/Slider.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Highlight {

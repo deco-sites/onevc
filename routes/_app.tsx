@@ -1,5 +1,5 @@
 import { AppProps } from "$fresh/server.ts";
-import GlobalTags from "deco-sites/fashion/components/GlobalTags.tsx";
+import GlobalTags from "deco-sites/onevc/components/GlobalTags.tsx";
 
 function App(props: AppProps) {
   return (

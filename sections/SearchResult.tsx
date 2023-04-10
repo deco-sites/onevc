@@ -1,6 +1,6 @@
 import SearchResult, {
   Props,
-} from "deco-sites/fashion/components/search/SearchResult.tsx";
+} from "deco-sites/onevc/components/search/SearchResult.tsx";
 
 function SearchResultSection(props: Props) {
   return <SearchResult {...props} />;

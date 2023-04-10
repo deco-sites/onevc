@@ -1,10 +1,10 @@
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
-import Filters from "deco-sites/fashion/components/search/Filters.tsx";
-import Sort from "deco-sites/fashion/components/search/Sort.tsx";
-import Modal from "deco-sites/fashion/components/ui/Modal.tsx";
-import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
+import Button from "deco-sites/onevc/components/ui/Button.tsx";
+import Icon from "deco-sites/onevc/components/ui/Icon.tsx";
+import Filters from "deco-sites/onevc/components/search/Filters.tsx";
+import Sort from "deco-sites/onevc/components/search/Sort.tsx";
+import Modal from "deco-sites/onevc/components/ui/Modal.tsx";
+import Breadcrumb from "deco-sites/onevc/components/ui/Breadcrumb.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 

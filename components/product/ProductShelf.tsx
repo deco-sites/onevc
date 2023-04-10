@@ -1,16 +1,16 @@
-import ProductCard from "deco-sites/fashion/components/product/ProductCard.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import { Slider } from "deco-sites/fashion/components/ui/Slider.tsx";
-import SliderControllerJS from "deco-sites/fashion/islands/SliderJS.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import ProductCard from "deco-sites/onevc/components/product/ProductCard.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import { Slider } from "deco-sites/onevc/components/ui/Slider.tsx";
+import SliderControllerJS from "deco-sites/onevc/islands/SliderJS.tsx";
+import Button from "deco-sites/onevc/components/ui/Button.tsx";
+import Icon from "deco-sites/onevc/components/ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { Product } from "deco-sites/std/commerce/types.ts";
-import ViewSendEvent from "deco-sites/fashion/islands/ViewSendEvent.tsx";
+import ViewSendEvent from "deco-sites/onevc/islands/ViewSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
-import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
+import { useOffer } from "deco-sites/onevc/sdk/useOffer.ts";
 
 export interface Props {
   title: string;

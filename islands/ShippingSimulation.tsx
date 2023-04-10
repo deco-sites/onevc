@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/ui/ShippingSimulation.tsx";
+export { default } from "deco-sites/onevc/components/ui/ShippingSimulation.tsx";

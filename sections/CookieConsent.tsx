@@ -1,1 +1,1 @@
-export { default } from "deco-sites/fashion/components/ui/CookieConsent.tsx";
+export { default } from "deco-sites/onevc/components/ui/CookieConsent.tsx";

@@ -219,6 +219,6 @@ Check performance best practices on
 
 # Thanks to all contributors!
 
-<a href="https://github.com/deco-sites/fashion/graphs/contributors">
+<a href="https://github.com/deco-sites/onevc/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=deco-sites/fashion" />
 </a>

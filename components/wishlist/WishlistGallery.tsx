@@ -1,8 +1,8 @@
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import SearchResult, {
   Props,
-} from "deco-sites/fashion/components/search/SearchResult.tsx";
+} from "deco-sites/onevc/components/search/SearchResult.tsx";
 
 function WishlistGallery(props: Props) {
   const isEmpty = !props.page || props.page.products.length === 0;
@@ -11,9 +11,7 @@ function WishlistGallery(props: Props) {
     return (
       <Container class="override:(mx-4 sm:mx-auto)">
         <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
-          <Text variant="heading-2">
-            Your wishlist is empty
-          </Text>
+          <Text variant="heading-2">Your wishlist is empty</Text>
           <Text variant="body">
             Log in and add items to your wishlist for later. They will show up
             here
@@ -25,5 +23,7 @@ function WishlistGallery(props: Props) {
 
   return <SearchResult {...props} />;
 }
+
+export type { Props };
 
 export default WishlistGallery;

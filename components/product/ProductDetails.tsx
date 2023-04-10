@@ -1,26 +1,23 @@
 import { useId } from "preact/hooks";
-import AddToCartButton from "deco-sites/fashion/islands/AddToCartButton.tsx";
-import ShippingSimulation from "deco-sites/fashion/islands/ShippingSimulation.tsx";
-import Container from "deco-sites/fashion/components/ui/Container.tsx";
-import Text from "deco-sites/fashion/components/ui/Text.tsx";
-import Breadcrumb from "deco-sites/fashion/components/ui/Breadcrumb.tsx";
-import Button from "deco-sites/fashion/components/ui/Button.tsx";
-import Icon from "deco-sites/fashion/components/ui/Icon.tsx";
+import AddToCartButton from "deco-sites/onevc/islands/AddToCartButton.tsx";
+import ShippingSimulation from "deco-sites/onevc/islands/ShippingSimulation.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import Breadcrumb from "deco-sites/onevc/components/ui/Breadcrumb.tsx";
+import Button from "deco-sites/onevc/components/ui/Button.tsx";
+import Icon from "deco-sites/onevc/components/ui/Icon.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
-import {
-  Slider,
-  SliderDots,
-} from "deco-sites/fashion/components/ui/Slider.tsx";
-import SliderJS from "deco-sites/fashion/components/ui/SliderJS.tsx";
-import { useOffer } from "deco-sites/fashion/sdk/useOffer.ts";
-import { formatPrice } from "deco-sites/fashion/sdk/format.ts";
+import { Slider, SliderDots } from "deco-sites/onevc/components/ui/Slider.tsx";
+import SliderJS from "deco-sites/onevc/components/ui/SliderJS.tsx";
+import { useOffer } from "deco-sites/onevc/sdk/useOffer.ts";
+import { formatPrice } from "deco-sites/onevc/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-import ViewSendEvent from "deco-sites/fashion/islands/ViewSendEvent.tsx";
+import ViewSendEvent from "deco-sites/onevc/islands/ViewSendEvent.tsx";
 import { mapProductToAnalyticsItem } from "deco-sites/std/commerce/utils/productToAnalyticsItem.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
-import ProductImageZoom from "deco-sites/fashion/islands/ProductImageZoom.tsx";
+import ProductImageZoom from "deco-sites/onevc/islands/ProductImageZoom.tsx";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
