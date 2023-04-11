@@ -2075,6 +2075,30 @@
       ],
       "title": "deco-sites/onevc/components/ui/ShippingSimulation.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vU2xpZGVUZXh0cy50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": "Slides"
+        },
+        "timing": {
+          "type": "number",
+          "title": "Timing"
+        }
+      },
+      "required": [
+        "slides",
+        "timing"
+      ],
+      "title": "deco-sites/onevc/components/hero/SlideTexts.tsx@Props"
+    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags"
     },
@@ -2221,6 +2245,48 @@
       ],
       "title": "deco-sites/onevc/components/search/SearchResult.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
+      "type": "string",
+      "format": "image-uri"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vSGVyby50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "slides": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": "Slides",
+          "description": "Each slide have new texts to be placed in each line"
+        },
+        "slideTime": {
+          "type": "number",
+          "title": "Slide Time",
+          "description": "In seconds"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "description": "Main hero image",
+          "title": "Image"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt",
+          "description": "Alt text from main hero image"
+        }
+      },
+      "required": [
+        "slides",
+        "slideTime",
+        "image",
+        "imageAlt"
+      ],
+      "title": "deco-sites/onevc/components/hero/Hero.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link": {
       "type": "object",
       "properties": {
@@ -2244,10 +2310,6 @@
       "items": {
         "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Link"
       }
-    },
-    "ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image": {
-      "type": "string",
-      "format": "image-uri"
     },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0xpbmtUcmVlLnRzeA==@Social": {
       "type": "object",
@@ -4147,6 +4209,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlVGV4dHMudHN4": {
+      "title": "./islands/SlideTexts.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vU2xpZGVUZXh0cy50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/SlideTexts.tsx"
+          ],
+          "default": "./islands/SlideTexts.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
       "title": "./islands/HeaderModals.tsx",
       "type": "object",
@@ -4350,6 +4433,27 @@
             "deco-sites/onevc/sections/WishlistGallery.tsx"
           ],
           "default": "deco-sites/onevc/sections/WishlistGallery.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IZXJvLnRzeA==": {
+      "title": "deco-sites/onevc/sections/Hero.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vSGVyby50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/onevc/sections/Hero.tsx"
+          ],
+          "default": "deco-sites/onevc/sections/Hero.tsx"
         }
       }
     },
@@ -5172,6 +5276,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlVGV4dHMudHN4"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
         },
         {
@@ -5227,6 +5334,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9XaXNobGlzdEdhbGxlcnkudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IZXJvLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9MaW5rVHJlZS50c3g="

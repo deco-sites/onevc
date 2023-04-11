@@ -10,19 +10,20 @@ function SlideTexts({ slides, timing }: Props) {
   const currentSlide = useSignal(0);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
+    const timeout = setInterval(() => {
+      console.log(currentSlide.value);
       currentSlide.value = currentSlide.value === slides.length - 1
         ? 0
         : currentSlide.value + 1;
     }, timing * 1000);
 
-    return clearTimeout(timeout);
-  }, [currentSlide.value]);
+    return () => clearInterval(timeout);
+  }, []);
 
   return (
     <>
       {slides[currentSlide.value].map((text) => (
-        <span key={text}>{text.trim()}</span>
+        <span class="block" key={text}>{text.trim()}</span>
       ))}
     </>
   );
