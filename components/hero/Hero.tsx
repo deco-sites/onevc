@@ -1,6 +1,6 @@
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import SlideTexts from "./SlideTexts.tsx";
+import SlideTexts from "deco-sites/onevc/islands/SlideTexts.tsx";
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 
 export interface Props {
