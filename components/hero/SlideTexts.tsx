@@ -22,8 +22,8 @@ function SlideTexts({ slides, timing }: Props) {
 
   return (
     <>
-      {slides[currentSlide.value].map((text) => (
-        <span class="block" key={text}>{text.trim()}</span>
+      {slides[currentSlide.value].map((text, key) => (
+        <span class="block" key={key}>{text.trim()}</span>
       ))}
     </>
   );
