@@ -24,13 +24,13 @@ export interface Props {
 
 function Hero({ slides, slideTime, image, imageAlt }: Props) {
   const pictureClasses =
-    "w-[50%] max-w-[500px] block fixed left-[50%] top-[50%] pb-[100px] translate-y-[-50%] transition-y-[-50%]";
+    "w-full max-w-[60vw] block relative left-[auto] top-[auto] transition-y-[-50%] pb-[50px] md:(fixed translate-y-[-50%] max-w-[501px] left-[50%] top-[50%] pb-[100px])";
   const shadowClasses =
     "absolute bottom-0 left-[50%] opacity-[.05] w-[70%] h-[10px] bg-black rounded-[50%] translate-x-[-50%] scale-x-[0.8]";
 
   return (
-    <Container class="md:(flex items-start py-[73px]) lg:(items-center py-[120px]) h-[100vh] relative">
-      <div class="w-[50%] pl-[10%] font-extrabold lg:(text-[55px] leading-[67px]) md:(text-[45px] leading-[55px])">
+    <Container class="py-[73px] flex flex-col justify-between items-center md:(flex-row items-start) lg:(items-center py-[120px]) h-[100vh] relative">
+      <div class="pl-[10%] font-extrabold text-[25px] leading-[35px] lg:(text-[55px] leading-[67px]) md:(text-[45px] leading-[55px] w-[50%])">
         <SlideTexts slides={slides} timing={slideTime} />
       </div>
       <div class={pictureClasses}>
