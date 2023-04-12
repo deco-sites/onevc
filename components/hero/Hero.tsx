@@ -30,7 +30,7 @@ function Hero({ slides, slideTime, image, imageAlt }: Props) {
 
   return (
     <Container class="py-[73px] flex flex-col justify-between items-center md:(flex-row items-start) lg:(items-center py-[120px]) h-[100vh] relative">
-      <div class="pl-[10%] font-extrabold text-[25px] leading-[35px] lg:(text-[55px] leading-[67px]) md:(text-[45px] leading-[55px] w-[50%])">
+      <div class="pl-[10%] pt-[10%] font-extrabold text-[25px] leading-[35px] lg:(text-[55px] leading-[67px]) md:(pt-0 text-[45px] leading-[55px] w-[50%])">
         <SlideTexts slides={slides} timing={slideTime} />
       </div>
       <div class={pictureClasses}>
