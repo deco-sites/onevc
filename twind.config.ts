@@ -94,8 +94,27 @@ const options: Omit<Options, "selfURL"> = {
         "slide-left": "slide-left-frame 0.4s ease normal",
         "slide-right": "slide-right-frame 0.4s ease normal",
         "slide-bottom": "slide-bottom-frame 0.4s ease normal",
+        "hero-image-shadow":
+          "hero-image-shadow 3s ease-in-out alternate infinite",
+        "hero-image": "hero-image 3s ease-in-out alternate infinite",
       },
       keyframes: {
+        "hero-image-shadow": {
+          from: {
+            transform: "translateX(-50%) scaleX(0.8)",
+            opacity: ".05",
+            filter: "blur(10px)",
+          },
+          to: {
+            transform: "translateX(-50%) scaleX(1)",
+            opacity: ".3",
+            filter: "blur(5px)",
+          },
+        },
+        "hero-image": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(25px)" },
+        },
         "slide-left-frame": {
           from: { transform: "translateX(100%)" },
           to: { transform: "translateX(0)" },
