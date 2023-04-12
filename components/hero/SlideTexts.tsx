@@ -1,5 +1,4 @@
-import { useSignal } from "@preact/signals";
-import { useEffect } from "preact/compat";
+import { useEffect, useState } from "preact/compat";
 
 export interface Props {
   slides: string[][];
@@ -7,23 +6,55 @@ export interface Props {
 }
 
 function SlideTexts({ slides, timing }: Props) {
-  const currentSlide = useSignal(0);
+  const [currentSlide, setNextSlide] = useState(0);
+  const [animateSlide, setAnimation] = useState(true);
 
   useEffect(() => {
-    const timeout = setInterval(() => {
-      console.log(currentSlide.value);
-      currentSlide.value = currentSlide.value === slides.length - 1
-        ? 0
-        : currentSlide.value + 1;
+    const maxTiming = slides[currentSlide].length * 250;
+    const slideTimeout = setTimeout(() => {
+      setNextSlide((currentSlide) =>
+        currentSlide === slides.length - 1 ? 0 : currentSlide + 1
+      );
+    }, (timing * 1000) + maxTiming);
+
+    const animationTimeout = setTimeout(() => {
+      setAnimation(false);
+
+      setTimeout(() => {
+        setAnimation(true);
+      }, maxTiming + 300);
     }, timing * 1000);
 
-    return () => clearInterval(timeout);
-  }, []);
+    return () => {
+      clearTimeout(slideTimeout);
+      clearTimeout(animationTimeout);
+    };
+  }, [currentSlide]);
 
   return (
     <>
-      {slides[currentSlide.value].map((text, key) => (
-        <span class="block" key={key}>{text.trim()}</span>
+      {slides.map((slide, slideIndex) => (
+        <p
+          key={slideIndex}
+          class={slideIndex === currentSlide ? "block" : "hidden"}
+        >
+          {slide.map((text, index) => (
+            <span
+              class={`block whitespace-nowrap ${
+                animateSlide
+                  ? "translate-x-0 opacity-1 visible"
+                  : "translate-x-[20px] opacity-0 invisible"
+              }`}
+              key={`${index}-${slideIndex}`}
+              style={{
+                transition: "all .6s ease-out",
+                transitionDelay: `${(index + 1) * 0.2}s`,
+              }}
+            >
+              {text.trim()}
+            </span>
+          ))}
+        </p>
       ))}
     </>
   );
