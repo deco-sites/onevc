@@ -2075,30 +2075,6 @@
       ],
       "title": "deco-sites/onevc/components/ui/ShippingSimulation.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vU2xpZGVUZXh0cy50c3g=@Props": {
-      "type": "object",
-      "properties": {
-        "slides": {
-          "type": "array",
-          "items": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "title": "Slides"
-        },
-        "timing": {
-          "type": "number",
-          "title": "Timing"
-        }
-      },
-      "required": [
-        "slides",
-        "timing"
-      ],
-      "title": "deco-sites/onevc/components/hero/SlideTexts.tsx@Props"
-    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags"
     },
@@ -4209,27 +4185,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlVGV4dHMudHN4": {
-      "title": "./islands/SlideTexts.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vU2xpZGVUZXh0cy50c3g=@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/SlideTexts.tsx"
-          ],
-          "default": "./islands/SlideTexts.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
       "title": "./islands/HeaderModals.tsx",
       "type": "object",
@@ -4291,6 +4246,22 @@
             "./islands/ViewSendEvent.tsx"
           ],
           "default": "./islands/ViewSendEvent.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlcm9VdGlscy50c3g=": {
+      "title": "./islands/HeroUtils.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/HeroUtils.tsx"
+          ],
+          "default": "./islands/HeroUtils.tsx"
         }
       }
     },
@@ -5276,9 +5247,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0FkZFRvQ2FydEJ1dHRvbi50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlVGV4dHMudHN4"
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
         },
         {
@@ -5289,6 +5257,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1ZpZXdTZW5kRXZlbnQudHN4"
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlcm9VdGlscy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NlYXJjaENvbnRyb2xzLnRzeA=="

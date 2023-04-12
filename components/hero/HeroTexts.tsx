@@ -5,7 +5,7 @@ export interface Props {
   timing: number;
 }
 
-function SlideTexts({ slides, timing }: Props) {
+function HeroTexts({ slides, timing }: Props) {
   const [currentSlide, setNextSlide] = useState(0);
   const [animateSlide, setAnimation] = useState(true);
 
@@ -60,4 +60,4 @@ function SlideTexts({ slides, timing }: Props) {
   );
 }
 
-export default SlideTexts;
+export default HeroTexts;

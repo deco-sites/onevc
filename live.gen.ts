@@ -13,11 +13,11 @@ import * as $$$$$2 from "./islands/HeaderButton.tsx";
 import * as $$$$$3 from "./islands/SendEventButton.tsx";
 import * as $$$$$4 from "./islands/HeaderSearchMenu.tsx";
 import * as $$$$$5 from "./islands/AddToCartButton.tsx";
-import * as $$$$$6 from "./islands/SlideTexts.tsx";
-import * as $$$$$7 from "./islands/HeaderModals.tsx";
-import * as $$$$$8 from "./islands/SliderJS.tsx";
-import * as $$$$$9 from "./islands/ProductImageZoom.tsx";
-import * as $$$$$10 from "./islands/ViewSendEvent.tsx";
+import * as $$$$$6 from "./islands/HeaderModals.tsx";
+import * as $$$$$7 from "./islands/SliderJS.tsx";
+import * as $$$$$8 from "./islands/ProductImageZoom.tsx";
+import * as $$$$$9 from "./islands/ViewSendEvent.tsx";
+import * as $$$$$10 from "./islands/HeroUtils.tsx";
 import * as $$$$$11 from "./islands/SearchControls.tsx";
 import * as $$$$$$$$0 from "./sections/WishlistGallery.tsx";
 import * as $$$$$$$$1 from "./sections/Hero.tsx";
@@ -109,11 +109,11 @@ const manifest: DecoManifest = {
     "./islands/SendEventButton.tsx": $$$$$3,
     "./islands/HeaderSearchMenu.tsx": $$$$$4,
     "./islands/AddToCartButton.tsx": $$$$$5,
-    "./islands/SlideTexts.tsx": $$$$$6,
-    "./islands/HeaderModals.tsx": $$$$$7,
-    "./islands/SliderJS.tsx": $$$$$8,
-    "./islands/ProductImageZoom.tsx": $$$$$9,
-    "./islands/ViewSendEvent.tsx": $$$$$10,
+    "./islands/HeaderModals.tsx": $$$$$6,
+    "./islands/SliderJS.tsx": $$$$$7,
+    "./islands/ProductImageZoom.tsx": $$$$$8,
+    "./islands/ViewSendEvent.tsx": $$$$$9,
+    "./islands/HeroUtils.tsx": $$$$$10,
     "./islands/SearchControls.tsx": $$$$$11,
   },
   "sections": {
