@@ -33,7 +33,7 @@ function Header(
   }: Props,
 ) {
   return (
-    <header class="bg-[rgba(255,255,255,0.95)] fixed w-screen z-50">
+    <header class="bg-[rgba(255,255,255,0.95)] lg:bg-transparent fixed w-screen z-50">
       <Navbar menu={{ items: navItems }} />
     </header>
   );
