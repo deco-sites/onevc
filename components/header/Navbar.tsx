@@ -35,7 +35,7 @@ function Navbar({ menu }: Props) {
       }`}
     >
       <Container
-        class={`transition-all duration-[250ms] ease-out py-[15px] ${
+        class={`transition-all duration-[250ms] ease-out py-[15px] flex flex-col justify-between ${
           checkDisplayMenu(
             "h-[100vh]",
             isScrolled.value ? "h-[77px]" : "lg:h-[119px] h-[77px]",
@@ -81,10 +81,10 @@ function Navbar({ menu }: Props) {
           <MenuButton />
         </div>
         <div
-          class={`transition-all duration-100 ease-out ${
+          class={`transition-all duration-100 ease-out flex flex-col items-start lg:(flex-grow-1 pt-[36px] pb-[120px] items-center) ${
             checkDisplayMenu(
-              "opacity-1 visible h-auto",
-              "opacity-0 invisible h-0",
+              "opacity-1 visible",
+              "opacity-0 invisible",
             )
           }`}
         >

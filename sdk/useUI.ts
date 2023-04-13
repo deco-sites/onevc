@@ -5,7 +5,7 @@
 
 import { signal } from "@preact/signals";
 
-const displayMenu = signal(false);
+const displayMenu = signal(true);
 const isScrolled = signal(false);
 
 const scrollEvent = () => {

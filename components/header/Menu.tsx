@@ -27,21 +27,19 @@ function Menu({ items, onClick }: Props) {
   };
 
   return (
-    <ul class="px-4 flex-grow flex flex-col divide-y divide-default">
+    <ul class="flex flex-col justify-around w-auto lg:(flex-grow-1 max-w-[666px] w-full)">
       {items.map((item) => (
-        <li>
+        <li class="lg:(px-[25%] py-0) px-0 py-[10px] overflow-hidden group block">
           <a
-            class="w-full inline-block"
+            class="relative inline-block whitespace-nowrap text-white text-[20px] p-[5px] font-bold lg:(text-[33px] font-extrabold)"
             href={item.href}
             target={item.newTab ? "_blank" : "_self"}
             onClick={handleClick}
           >
-            <Text
-              class="flex-grow min-h-[40px] flex items-center justify-start"
-              variant={"menu"}
-            >
+            <span>
               {item.label}
-            </Text>
+            </span>
+            <div class="absolute bg-white w-screen h-[1px] bottom-0 right-[200%] opacity-0 transition-all duration-[250ms] ease-out group-hover:(right-0 opacity-100)" />
           </a>
         </li>
       ))}
