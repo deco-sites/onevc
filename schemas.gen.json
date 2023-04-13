@@ -2788,70 +2788,16 @@
           "type": "string",
           "title": "Href"
         },
-        "children": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "label": {
-                "type": "string",
-                "title": "Label"
-              },
-              "href": {
-                "type": "string",
-                "title": "Href"
-              },
-              "children": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "label": {
-                      "type": "string",
-                      "title": "Label"
-                    },
-                    "href": {
-                      "type": "string",
-                      "title": "Href"
-                    }
-                  },
-                  "required": [
-                    "label",
-                    "href"
-                  ]
-                },
-                "title": "Children"
-              }
-            },
-            "required": [
-              "label",
-              "href"
-            ]
-          },
-          "title": "Children"
-        },
-        "image": {
-          "type": "object",
-          "properties": {
-            "src": {
-              "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-              "title": "Src"
-            },
-            "alt": {
-              "type": [
-                "string",
-                "null"
-              ],
-              "title": "Alt"
-            }
-          },
-          "required": [],
-          "title": "Image"
+        "newTab": {
+          "type": "boolean",
+          "title": "New Tab",
+          "description": "Should open in a new tab?"
         }
       },
       "required": [
         "label",
-        "href"
+        "href",
+        "newTab"
       ],
       "title": "NavItem"
     },
@@ -3858,22 +3804,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g=": {
-      "title": "./islands/HeaderModals.tsx",
-      "type": "object",
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/HeaderModals.tsx"
-          ],
-          "default": "./islands/HeaderModals.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
       "title": "./islands/SliderJS.tsx",
       "type": "object",
@@ -4772,9 +4702,6 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlYWRlck1vZGFscy50c3g="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA=="

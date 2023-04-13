@@ -26,17 +26,17 @@ function MenuButton() {
     >
       <div
         class={`${baseLines} top-[-2px] ${
-          checkDisplayMenu("opacity-0", "opacity-1")
+          checkDisplayMenu("bg-white opacity-0", "opacity-1")
         }`}
       />
       <div
         class={`${baseLines} ${
-          checkDisplayMenu("top-[50%] -rotate-45", "top-[6px]")
+          checkDisplayMenu("bg-white top-[50%] -rotate-45", "top-[6px]")
         }`}
       />
       <div
         class={`${baseLines} bottom-0 ${
-          checkDisplayMenu("top-[50%] rotate-45", "lg:w-[70%]")
+          checkDisplayMenu("bg-white top-[50%] rotate-45", "lg:w-[70%]")
         }`}
       />
     </Button>
