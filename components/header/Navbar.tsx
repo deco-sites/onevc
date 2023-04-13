@@ -1,18 +1,21 @@
-import { asset } from "$fresh/runtime.ts";
 import type { Props as MenuProps } from "deco-sites/onevc/components/header/Menu.tsx";
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
+import type { Link } from "deco-sites/onevc/components/ui/SocialLinks.tsx";
+import SocialLinks from "deco-sites/onevc/components/ui/SocialLinks.tsx";
 import MenuButton from "deco-sites/onevc/islands/MenuButton.tsx";
 import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
-import { Picture } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Menu from "./Menu.tsx";
 
 interface Props {
   menu: Pick<MenuProps, "items">;
+  links?: Link[];
 }
 
-function Navbar({ menu }: Props) {
+function Navbar({ menu, links }: Props) {
   const { isScrolled, displayMenu } = useUI();
-  const logoAsset = asset("/logo.png");
+  const logoAsset =
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/829/bc44a6c1-7cdf-4996-9298-f3588faf7a1e";
 
   const checkDisplayMenu = (okClasses: string, failClasses = "") => {
     if (displayMenu.value) {
@@ -35,7 +38,7 @@ function Navbar({ menu }: Props) {
       }`}
     >
       <Container
-        class={`transition-all duration-[250ms] ease-out py-[15px] flex flex-col justify-between ${
+        class={`transition-all relative duration-[250ms] ease-out py-[15px] flex flex-col justify-between ${
           checkDisplayMenu(
             "h-[100vh]",
             isScrolled.value ? "h-[77px]" : "lg:h-[119px] h-[77px]",
@@ -57,22 +60,20 @@ function Navbar({ menu }: Props) {
                 ),
               }}
             >
-              {
-                /* <Source
-              media="(max-width: 767px)"
-              fetchPriority="high"
-              src={logoAsset}
-              width={95}
-            />
-            <Source
-              media="(min-width: 768px)"
-              fetchPriority="high"
-              src={logoAsset}
-              width={165}
-            /> */
-              }
+              <Source
+                media="(max-width: 767px)"
+                fetchPriority="high"
+                src={logoAsset}
+                width={95}
+              />
+              <Source
+                media="(min-width: 768px)"
+                fetchPriority="high"
+                src={logoAsset}
+                width={165}
+              />
               <img
-                class="object-cover w-full sm:h-full"
+                class="lg:w-[165px] w-[95px] h-auto"
                 src={logoAsset}
                 alt="ONEVC Logo"
               />
@@ -89,6 +90,18 @@ function Navbar({ menu }: Props) {
           }`}
         >
           <Menu {...menu} onClick={closeMenu} />
+        </div>
+        <div
+          class={`transition-all duration-100 ease-out lg:(flex absolute bottom-[55px] left-0 -rotate-90 origin-top-left) ${
+            checkDisplayMenu(
+              "opacity-1 visible",
+              "opacity-0 invisible",
+            )
+          }`}
+        >
+          {links && links.length > 0
+            ? <SocialLinks links={links} type="invert" />
+            : null}
         </div>
       </Container>
     </header>

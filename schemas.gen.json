@@ -2789,15 +2789,16 @@
           "title": "Href"
         },
         "newTab": {
-          "type": "boolean",
-          "title": "New Tab",
-          "description": "Should open in a new tab?"
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "New Tab"
         }
       },
       "required": [
         "label",
-        "href",
-        "newTab"
+        "href"
       ],
       "title": "NavItem"
     },
@@ -2807,6 +2808,30 @@
         "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem"
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Link"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link"
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@Props": {
       "type": "object",
       "properties": {
@@ -2814,6 +2839,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem[]",
           "title": "Nav Items",
           "description": "Navigation items used both on mobile and desktop menus"
+        },
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link[]",
+          "title": "Links"
         }
       },
       "required": [],

@@ -1,4 +1,5 @@
 import Navbar from "deco-sites/onevc/islands/Navbar.tsx";
+import { Link } from "deco-sites/onevc/components/ui/SocialLinks.tsx";
 
 export interface NavItem {
   label: string;
@@ -15,16 +16,21 @@ export interface Props {
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: NavItem[];
+  /**
+   * @title Social links
+   */
+  links?: Link[];
 }
 
 function Header(
   {
     navItems = [],
+    links,
   }: Props,
 ) {
   return (
     <>
-      <Navbar menu={{ items: navItems }} />
+      <Navbar menu={{ items: navItems }} links={links} />
       <div class="lg:hidden md:(h-[77px] block) hidden" />
     </>
   );
