@@ -23,7 +23,7 @@ function Navbar({ menu }: Props) {
 
   return (
     <Container
-      class={`transition-all duration-[250ms] ease-out h-[100vh] py-[15px] ${
+      class={`transition-all duration-[250ms] ease-out py-[15px] ${
         checkDisplayMenu(
           "h-[100vh] bg-[rgba(85,85,85,0.99)]",
           isScrolled.value ? "h-[77px]" : "lg:h-[119px] h-[77px]",
