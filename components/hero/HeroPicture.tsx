@@ -15,7 +15,7 @@ function HeroPicture({ image, imageAlt }: Props) {
         isScrolled.value
           ? "translate-y-[-50%] md:(translate-x-[30px]) scale-[0.6] opacity-0"
           : ""
-      } lg:(max-w-[60vw]) w-full max-w-[60vw] block relative left-auto top-auto transition ease-in-out duration-[.6s] pb-[50px] md:(fixed translate-y-[-50%] max-w-[50vw] left-[50%] top-[50%] pb-[100px])`}
+      } lg:(max-w-[60vw]) w-full max-w-[60vw] w-[501px] block relative left-auto top-auto transition ease-in-out duration-[.6s] pb-[50px] md:(fixed translate-y-[-50%] max-w-[50vw] left-[50%] top-[50%] pb-[100px])`}
     >
       <div class="animate-hero-image">
         <Picture
