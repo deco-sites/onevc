@@ -3,7 +3,7 @@ import type { Props as MenuProps } from "deco-sites/onevc/components/header/Menu
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import MenuButton from "deco-sites/onevc/islands/MenuButton.tsx";
 import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
-import { Picture } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Menu from "./Menu.tsx";
 
 interface Props {
@@ -12,6 +12,7 @@ interface Props {
 
 function Navbar({ menu }: Props) {
   const { isScrolled, displayMenu } = useUI();
+  const logoAsset = asset("/logo.png");
 
   const checkDisplayMenu = (okClasses: string, failClasses = "") => {
     if (displayMenu.value) {
@@ -37,19 +38,22 @@ function Navbar({ menu }: Props) {
           class={`flex-grow inline-flex items-center`}
           aria-label="Store logo"
         >
-          <Picture
-            preload
-          >
-            {
-              /* <Source
-            fetchPriority="high"
-            src={asset("/logo.png")}
-            width={165}
-          /> */
-            }
+          <Picture preload>
+            {/* <Source
+              media="(max-width: 767px)"
+              fetchPriority="high"
+              src={logoAsset}
+              width={95}
+            />
+            <Source
+              media="(min-width: 768px)"
+              fetchPriority="high"
+              src={logoAsset}
+              width={165}
+            /> */}
             <img
               class="object-cover w-full sm:h-full"
-              src={asset("/logo.png")}
+              src={logoAsset}
               alt="ONEVC Logo"
             />
           </Picture>
