@@ -5,11 +5,10 @@
 
 import { signal } from "@preact/signals";
 
-const displayMenu = signal(true);
+const displayMenu = signal(false);
 const isScrolled = signal(false);
 
 const scrollEvent = () => {
-  console.log("qwe");
   if (globalThis.scrollY === 0) {
     return isScrolled.value = false;
   }

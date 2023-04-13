@@ -2148,6 +2148,30 @@
       "type": "string",
       "format": "image-uri"
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Link"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link"
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlcm8vSGVyby50c3g=@Props": {
       "type": "object",
       "properties": {
@@ -2176,6 +2200,10 @@
           "type": "string",
           "title": "Image Alt",
           "description": "Alt text from main hero image"
+        },
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link[]",
+          "title": "Links"
         }
       },
       "required": [
@@ -2806,30 +2834,6 @@
       "type": "array",
       "items": {
         "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem"
-      }
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        }
-      },
-      "required": [
-        "label",
-        "href"
-      ],
-      "title": "Link"
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link"
       }
     },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@Props": {

@@ -15,7 +15,7 @@ function SocialLinks({ links, type = "normal" }: Props) {
   const bgColor = type === "invert" ? "bg-black" : "bg-white";
 
   return (
-    <ul class="flex flex-col lg:flex-row py-[30px]">
+    <ul class="flex flex-col py-[30px] lg:(flex-row py-0)">
       {links.map(({ label, href }) => (
         <li class="p-0 lg:(py-[28px] px-[5px])">
           <a
