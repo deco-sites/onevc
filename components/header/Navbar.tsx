@@ -39,7 +39,8 @@ function Navbar({ menu }: Props) {
           aria-label="Store logo"
         >
           <Picture preload>
-            {/* <Source
+            {
+              /* <Source
               media="(max-width: 767px)"
               fetchPriority="high"
               src={logoAsset}
@@ -50,7 +51,8 @@ function Navbar({ menu }: Props) {
               fetchPriority="high"
               src={logoAsset}
               width={165}
-            /> */}
+            /> */
+            }
             <img
               class="object-cover w-full sm:h-full"
               src={logoAsset}
