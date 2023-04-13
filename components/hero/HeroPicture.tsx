@@ -1,7 +1,5 @@
+import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
-import { IS_BROWSER } from "$fresh/runtime.ts";
-import { useEffect } from "preact/compat";
-import { useSignal } from "@preact/signals";
 
 export interface Props {
   image: string;
@@ -9,31 +7,12 @@ export interface Props {
 }
 
 function HeroPicture({ image, imageAlt }: Props) {
-  const hideImage = useSignal(false);
-
-  useEffect(() => {
-    if (!IS_BROWSER) return;
-
-    const scrollEvent = () => {
-      if (globalThis.scrollY === 0) {
-        return hideImage.value = false;
-      }
-      return hideImage.value = true;
-    };
-
-    globalThis.addEventListener("scroll", scrollEvent);
-    globalThis.addEventListener("load", scrollEvent);
-
-    return () => {
-      globalThis.removeEventListener("scroll", scrollEvent);
-      globalThis.removeEventListener("load", scrollEvent);
-    };
-  }, [IS_BROWSER]);
+  const { isScrolled } = useUI();
 
   return (
     <div
       class={`${
-        hideImage.value
+        isScrolled.value
           ? "translate-y-[-50%] md:(translate-x-[30px]) scale-[0.6] opacity-0"
           : ""
       } w-full max-w-[60vw] block relative left-auto top-auto transition ease-in-out duration-[.6s] pb-[50px] md:(fixed translate-y-[-50%] max-w-[501px] left-[50%] top-[50%] pb-[100px])`}

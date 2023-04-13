@@ -2,9 +2,6 @@ import Button from "deco-sites/onevc/components/ui/Button.tsx";
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import Text from "deco-sites/onevc/components/ui/Text.tsx";
 import Icon from "deco-sites/onevc/components/ui/Icon.tsx";
-import Avatar from "deco-sites/onevc/components/ui/Avatar.tsx";
-import Breadcrumb from "deco-sites/onevc/components/ui/Breadcrumb.tsx";
-import QuantitySelector from "deco-sites/onevc/components/ui/QuantitySelector.tsx";
 import type { ComponentChildren } from "preact";
 
 const colors = [
@@ -178,47 +175,6 @@ function DesignSystem() {
             </li>
           ))}
         </ul>
-      </DesignSystemItem>
-
-      <DesignSystemItem title="Avatar">
-        <div class="flex gap-2">
-          <Avatar variant="abbreviation" content="PP" />
-          <Avatar variant="abbreviation" content="PP" disabled />
-          <Avatar variant="color" content="azul-clara" />
-          <Avatar variant="color" content="branca" />
-          <Avatar variant="color" content="cinza-escura" />
-        </div>
-      </DesignSystemItem>
-
-      <DesignSystemItem title="Breadcrumb">
-        <Breadcrumb
-          itemListElement={[
-            {
-              "@type": "ListItem",
-              name: "Segment 1",
-              item: "http://localhost:8000/a",
-              position: 1,
-            },
-            {
-              "@type": "ListItem",
-              name: "Segment 2",
-              item: "http://localhost:8000/a/b",
-              position: 2,
-            },
-            {
-              "@type": "ListItem",
-              name: "Segment 3",
-              item: "http://localhost:8000/a/b/c",
-              position: 3,
-            },
-          ]}
-        />
-      </DesignSystemItem>
-
-      <DesignSystemItem title="QuantitySelector">
-        <div class="w-min">
-          <QuantitySelector quantity={10} />
-        </div>
       </DesignSystemItem>
     </ul>
   );

@@ -5,14 +5,23 @@
 
 import { signal } from "@preact/signals";
 
-const displayCart = signal(false);
 const displayMenu = signal(false);
-const displaySearchbar = signal(false);
+const isScrolled = signal(false);
+
+const scrollEvent = () => {
+  console.log("qwe");
+  if (globalThis.scrollY === 0) {
+    return isScrolled.value = false;
+  }
+  return isScrolled.value = true;
+};
+
+globalThis.addEventListener("scroll", scrollEvent);
+globalThis.addEventListener("load", scrollEvent);
 
 const state = {
-  displayCart,
+  isScrolled,
   displayMenu,
-  displaySearchbar,
 };
 
 export const useUI = () => state;

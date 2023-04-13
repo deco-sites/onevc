@@ -13,6 +13,13 @@ function GlobalTags() {
       <link
         rel="icon"
         type="image/png"
+        sizes="96x96"
+        href={asset("/favicon-96x96.png")}
+      >
+      </link>
+      <link
+        rel="icon"
+        type="image/png"
         sizes="16x16"
         href={asset("/favicon-16x16.png")}
       />

@@ -40,16 +40,14 @@ function HeroTexts({ slides, timing }: Props) {
         >
           {slide.map((text, index) => (
             <span
-              class={`block whitespace-nowrap ${
+              class={`block whitespace-nowrap transition-all ease-out duration-[.6s] delay-[${`${
+                (index + 1) * 0.2
+              }s`}] ${
                 animateSlide
                   ? "translate-x-0 opacity-1 visible"
                   : "translate-x-[20px] opacity-0 invisible"
               }`}
               key={`${index}-${slideIndex}`}
-              style={{
-                transition: "all .6s ease-out",
-                transitionDelay: `${(index + 1) * 0.2}s`,
-              }}
             >
               {text.trim()}
             </span>

@@ -1,78 +1,72 @@
-import HeaderButton from "deco-sites/onevc/islands/HeaderButton.tsx";
-import Icon from "deco-sites/onevc/components/ui/Icon.tsx";
-import Button from "deco-sites/onevc/components/ui/Button.tsx";
+import { asset } from "$fresh/runtime.ts";
+import type { Props as MenuProps } from "deco-sites/onevc/components/header/Menu.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
+import MenuButton from "deco-sites/onevc/islands/MenuButton.tsx";
+import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
+import { Picture } from "deco-sites/std/components/Picture.tsx";
+import Menu from "./Menu.tsx";
 
-import NavItem from "./NavItem.tsx";
-import { navbarHeight } from "./constants.ts";
-import HeaderSearchMenu from "deco-sites/onevc/islands/HeaderSearchMenu.tsx";
-import type { INavItem } from "./NavItem.tsx";
-import type { Props as SearchbarProps } from "deco-sites/onevc/components/search/Searchbar.tsx";
+interface Props {
+  menu: MenuProps;
+}
 
-function Navbar({ items, searchbar }: {
-  items: INavItem[];
-  searchbar: SearchbarProps;
-}) {
+function Navbar({ menu }: Props) {
+  const { isScrolled, displayMenu } = useUI();
+
+  const checkDisplayMenu = (okClasses: string, failClasses = "") => {
+    if (displayMenu.value) {
+      return okClasses;
+    }
+    return failClasses;
+  };
+
   return (
-    <>
-      {/* Mobile Version */}
+    <Container
+      class={`transition-all duration-[250ms] ease-out h-[100vh] py-[15px] ${
+        checkDisplayMenu(
+          "h-[100vh] bg-[rgba(85,85,85,0.99)]",
+          isScrolled.value ? "h-[77px]" : "lg:h-[119px] h-[77px]",
+        )
+      } ${!isScrolled.value || displayMenu.value ? "lg:py-[36px]" : ""}`}
+    >
       <div
-        class={`md:hidden flex flex-row justify-between items-center h-[${navbarHeight}] border-b-1 border-default w-full px-2 gap-2`}
+        class={`flex flex-row justify-between items-center w-full gap-2`}
       >
-        <HeaderButton variant="menu" />
-
         <a
           href="/"
-          class={`flex-grow inline-flex items-center min-h-[${navbarHeight}]`}
+          class={`flex-grow inline-flex items-center`}
           aria-label="Store logo"
         >
-          <Icon id="Logo" width={126} height={16} />
-        </a>
-
-        <div class="flex gap-1">
-          <HeaderButton variant="search" />
-          <HeaderButton variant="cart" />
-        </div>
-      </div>
-
-      {/* Desktop Version */}
-      <div class="hidden md:flex flex-row justify-between items-center border-b-1 border-default w-full pl-2 pr-3">
-        <div class="flex-none w-44">
-          <a href="/" aria-label="Store logo" class="block px-4 py-3 w-[160px]">
-            <Icon id="Logo" width={126} height={16} />
-          </a>
-        </div>
-        <div class="flex-auto flex justify-center">
-          {items.map((item) => <NavItem item={item} />)}
-        </div>
-        <div class="flex-none w-44 flex items-center justify-end gap-2">
-          <HeaderButton variant="search" />
-          <HeaderSearchMenu searchbar={searchbar} />
-          <Button
-            as="a"
-            variant="icon"
-            href="/login"
-            aria-label="Log in"
+          <Picture
+            preload
           >
-            <Icon id="User" width={20} height={20} strokeWidth={0.4} />
-          </Button>
-          <Button
-            as="a"
-            variant="icon"
-            href="/wishlist"
-            aria-label="Wishlist"
-          >
-            <Icon
-              id="Heart"
-              width={20}
-              height={20}
-              strokeWidth={2}
-              fill="none"
+            {
+              /* <Source
+            fetchPriority="high"
+            src={asset("/logo.png")}
+            width={165}
+          /> */
+            }
+            <img
+              class="object-cover w-full sm:h-full"
+              src={asset("/logo.png")}
+              alt="ONEVC Logo"
             />
-          </Button>
-          <HeaderButton variant="cart" />
-        </div>
+          </Picture>
+        </a>
+        <MenuButton />
       </div>
-    </>
+      <div
+        class={`transition-all duration-100 ease-out ${
+          checkDisplayMenu(
+            "opacity-1 visible h-auto",
+            "opacity-0 invisible h-0",
+          )
+        }`}
+      >
+        <Menu {...menu} />
+      </div>
+    </Container>
   );
 }
 
