@@ -33,7 +33,7 @@ function Navbar({ menu, links }: Props) {
       class={`fixed w-screen z-50 transition-colors duration-[250ms] ease-out ${
         checkDisplayMenu(
           "bg-[rgba(85,85,85,0.99)]!",
-          "bg-[rgba(255,255,255,0.95)] md:bg-transparent",
+          isScrolled.value ? "bg-[rgba(255,255,255,0.95)]" : "md:bg-transparent",
         )
       }`}
     >
