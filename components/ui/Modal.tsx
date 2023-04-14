@@ -1,9 +1,9 @@
-import Text from "deco-sites/onevc/components/ui/Text.tsx";
-import Button from "deco-sites/onevc/components/ui/Button.tsx";
-import { useEffect, useRef } from "preact/hooks";
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
+import Button from "deco-sites/onevc/components/ui/Button.tsx";
+import Text from "deco-sites/onevc/components/ui/Text.tsx";
 import type { JSX } from "preact";
+import { useEffect, useRef } from "preact/hooks";
 
 import Icon from "./Icon.tsx";
 
@@ -86,9 +86,13 @@ const Modal = ({
           class={`bg-default flex flex-col max-h-full ${containerStyles[mode]}`}
         >
           <header class="flex px-4 py-6 justify-between items-center border-b-1 border-default">
-            <h1>
-              <Text variant="heading-2">{title}</Text>
-            </h1>
+            {title
+              ? (
+                <h1>
+                  <Text variant="heading-2">{title}</Text>
+                </h1>
+              )
+              : null}
             <Button variant="icon" onClick={onClose}>
               <Icon id="XMark" width={20} height={20} strokeWidth={2} />
             </Button>

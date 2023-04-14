@@ -2805,6 +2805,303 @@
       "required": [],
       "title": "deco-sites/onevc/components/footer/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Section": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Title"
+        },
+        "containerSize": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "container"
+            },
+            {
+              "type": "string",
+              "const": "full"
+            }
+          ],
+          "type": "string",
+          "title": "Container Size"
+        },
+        "space": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none"
+            },
+            {
+              "type": "string",
+              "const": "around"
+            },
+            {
+              "type": "string",
+              "const": "between"
+            }
+          ],
+          "type": "string",
+          "title": "Space"
+        },
+        "itemsJustify": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "justify"
+            },
+            {
+              "type": "string",
+              "const": "free"
+            }
+          ],
+          "type": "string",
+          "title": "Items Justify",
+          "description": "If it's justify the last line will be justified within the rest items. If it's free the last line will have rest items"
+        },
+        "responsivityType": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "progressive"
+            },
+            {
+              "type": "string",
+              "const": "specific"
+            }
+          ],
+          "type": "string",
+          "title": "Responsivity Type",
+          "description": "If it's progressive tablet and mobile columns are dispensable. If it's specific you MUST set all columns' value"
+        },
+        "desktopColumns": {
+          "type": "number",
+          "title": "Desktop Columns"
+        },
+        "tabletColumns": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Tablet Columns"
+        },
+        "mobileColumns": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "title": "Mobile Columns"
+        }
+      },
+      "required": [
+        "title",
+        "containerSize",
+        "space",
+        "itemsJustify",
+        "responsivityType",
+        "desktopColumns"
+      ],
+      "title": "Section"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemImage": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Src"
+        },
+        "alt": {
+          "type": "string",
+          "title": "Alt"
+        },
+        "imageColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "normal"
+            },
+            {
+              "type": "string",
+              "const": "invert"
+            },
+            {
+              "type": "string",
+              "const": "grayscale"
+            }
+          ],
+          "type": "string",
+          "title": "Image Color"
+        },
+        "hoverStyle": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "none"
+            },
+            {
+              "type": "string",
+              "const": "zoom-in"
+            },
+            {
+              "type": "string",
+              "const": "button"
+            }
+          ],
+          "type": "string",
+          "title": "Hover Style"
+        },
+        "label": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Label"
+        },
+        "subLabel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Sub Label"
+        }
+      },
+      "required": [
+        "src",
+        "alt",
+        "imageColor",
+        "hoverStyle"
+      ],
+      "title": "ItemImage"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Link": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "href": {
+          "type": "string",
+          "title": "Href"
+        }
+      },
+      "required": [
+        "label",
+        "href"
+      ],
+      "title": "Link"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Link[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Link"
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Detail": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "value": {
+          "type": "string",
+          "title": "Value",
+          "description": "To add a new line into the text use \\n"
+        }
+      },
+      "required": [
+        "label",
+        "value"
+      ],
+      "title": "Detail"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Detail[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Detail"
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemContent": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Title"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Subtitle"
+        },
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Link[]",
+          "title": "Links"
+        },
+        "details": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Detail[]",
+          "title": "Details"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "To add a new line into the text use \\n"
+        }
+      },
+      "required": [
+        "description"
+      ],
+      "title": "ItemContent"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemImage",
+          "description": "Image settings",
+          "title": "Image"
+        },
+        "content": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemContent",
+          "description": "Modal content settings",
+          "title": "Content"
+        }
+      },
+      "required": [
+        "image",
+        "content"
+      ],
+      "title": "Item"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item"
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby9Qb3J0Zm9saW8udHN4@Props": {
+      "type": "object",
+      "properties": {
+        "section": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Section",
+          "title": "Section"
+        },
+        "items": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item[]",
+          "title": "Items"
+        }
+      },
+      "required": [
+        "section",
+        "items"
+      ],
+      "title": "deco-sites/onevc/components/portfolio/Portfolio.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2hlYWRlci9IZWFkZXIudHN4@NavItem": {
       "type": "object",
       "properties": {
@@ -2851,57 +3148,6 @@
       },
       "required": [],
       "title": "deco-sites/onevc/components/header/Header.tsx@Props"
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight": {
-      "type": "object",
-      "properties": {
-        "src": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
-          "title": "Src"
-        },
-        "alt": {
-          "type": "string",
-          "title": "Alt"
-        },
-        "href": {
-          "type": "string",
-          "title": "Href"
-        },
-        "label": {
-          "type": "string",
-          "title": "Label"
-        }
-      },
-      "required": [
-        "src",
-        "alt",
-        "href",
-        "label"
-      ],
-      "title": "Highlight"
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight"
-      }
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Props": {
-      "type": "object",
-      "properties": {
-        "highlights": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Highlight[]",
-          "title": "Highlights"
-        },
-        "title": {
-          "type": "string",
-          "title": "Title"
-        }
-      },
-      "required": [
-        "title"
-      ],
-      "title": "deco-sites/onevc/components/ui/Highlights.tsx@Props"
     },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1doYXRzQXBwLnRzeA==@Props": {
       "type": "object",
@@ -3837,6 +4083,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0l0ZW0udHN4": {
+      "title": "./islands/Item.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Item.tsx"
+          ],
+          "default": "./islands/Item.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
       "title": "./islands/SliderJS.tsx",
       "type": "object",
@@ -4127,6 +4389,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Qb3J0Zm9saW8udHN4": {
+      "title": "deco-sites/onevc/sections/Portfolio.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby9Qb3J0Zm9saW8udHN4@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/onevc/sections/Portfolio.tsx"
+          ],
+          "default": "deco-sites/onevc/sections/Portfolio.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IZWFkZXIudHN4": {
       "title": "deco-sites/onevc/sections/Header.tsx",
       "type": "object",
@@ -4145,27 +4428,6 @@
             "deco-sites/onevc/sections/Header.tsx"
           ],
           "default": "deco-sites/onevc/sections/Header.tsx"
-        }
-      }
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA==": {
-      "title": "deco-sites/onevc/sections/Highlights.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0hpZ2hsaWdodHMudHN4@Props"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "deco-sites/onevc/sections/Highlights.tsx"
-          ],
-          "default": "deco-sites/onevc/sections/Highlights.tsx"
         }
       }
     },
@@ -4737,6 +4999,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0l0ZW0udHN4"
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
         },
         {
@@ -4806,10 +5071,10 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Db29raWVDb25zZW50LnRzeA=="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IZWFkZXIudHN4"
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Qb3J0Zm9saW8udHN4"
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IaWdobGlnaHRzLnRzeA=="
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9IZWFkZXIudHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9XaGF0c0FwcC50c3g="
