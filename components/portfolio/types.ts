@@ -49,12 +49,12 @@ export interface Item {
   content: ItemContent;
 }
 
-export type LabelessItem = Omit<Item, 'label'>
+export type LabelessItem = Omit<Item, "label">;
 
 export interface Section {
   title: string;
   containerSize: "container" | "full";
-  background: 'white' | 'gray-line';
+  background: "white" | "gray-line";
   /**
    * @description If it's justify the last line will be justified within the rest items. If it's free the last line will have rest items
    */
