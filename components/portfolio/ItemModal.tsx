@@ -1,5 +1,5 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import type { Item as Props } from "./types.ts";
+import type { LabelessItem as Props } from "./types.ts";
 
 export function ItemModal({ image, content }: Props) {
   return (

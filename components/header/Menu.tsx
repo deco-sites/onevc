@@ -15,7 +15,7 @@ function Menu({ items, onClick }: Props) {
     if (!href?.startsWith("#")) return;
 
     event.preventDefault();
-    const element = document.getElementById(href);
+    const element = document.getElementById(href.replace("#", ""));
 
     window.scroll({
       behavior: "smooth",

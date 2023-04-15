@@ -2036,6 +2036,9 @@
       ],
       "title": "deco-sites/std/commerce/occ/client.ts@ConfigOCC"
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@LabelessItem": {
+      "title": "deco-sites/onevc/components/portfolio/types.ts@LabelessItem"
+    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags"
     },
@@ -2826,6 +2829,20 @@
           "type": "string",
           "title": "Container Size"
         },
+        "background": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "white"
+            },
+            {
+              "type": "string",
+              "const": "gray-line"
+            }
+          ],
+          "type": "string",
+          "title": "Background"
+        },
         "space": {
           "anyOf": [
             {
@@ -2896,6 +2913,7 @@
       "required": [
         "title",
         "containerSize",
+        "background",
         "space",
         "itemsJustify",
         "responsivityType",
@@ -3050,7 +3068,7 @@
         "description": {
           "type": "string",
           "title": "Description",
-          "description": "To add a new line into the text use \\n"
+          "description": "To add a new line into the text use <br>"
         }
       },
       "required": [
@@ -3061,6 +3079,11 @@
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item": {
       "type": "object",
       "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label",
+          "description": "Setup item's identifier"
+        },
         "image": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemImage",
           "description": "Image settings",
@@ -3073,6 +3096,7 @@
         }
       },
       "required": [
+        "label",
         "image",
         "content"
       ],
@@ -4086,6 +4110,11 @@
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0l0ZW0udHN4": {
       "title": "./islands/Item.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@LabelessItem"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
