@@ -1,9 +1,16 @@
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
-import Text from "deco-sites/onevc/components/ui/Text.tsx";
-import { slugify } from "deco-sites/onevc/sdk/format.ts";
+import { Title } from "deco-sites/onevc/components/ui/Title.tsx";
 import Item from "deco-sites/onevc/islands/Item.tsx";
-import type { Item as ItemProps, LabelessItem, Section } from "./types.ts";
+import { slugify } from "deco-sites/onevc/sdk/format.ts";
 import { tw } from "twind/css";
+import type {
+  Item as ItemProps,
+  LabelessItem,
+  Section,
+  Spacing,
+} from "./types.ts";
+import { multi } from "deco-sites/onevc/sdk/multi.ts";
+import { method } from "deco-sites/onevc/sdk/multi.ts";
 
 export interface Props {
   section: Section;
@@ -15,6 +22,7 @@ function Portfolio({
   section: {
     title,
     containerSize,
+    spacing,
     background,
     itemsJustify,
     responsivityType,
@@ -37,21 +45,27 @@ function Portfolio({
       getPercentage(desktopColumns - 1)
     }%] w-[${getPercentage(desktopColumns - 2)}%]`;
 
+  const handleSpacing = multi<Spacing, Spacing, string>(
+    (s) => s,
+    method("high", () => tw`md:pt-[90px] pt-[15%]`),
+    method("medium", () => tw`md:pt-[45px] pt-[10%]`),
+    method("low", () => tw`pt-[20px]`),
+  )();
+
   return (
-    <div class={`${background === "gray-line" ? "bg-gradient-custom" : ""}`}>
+    <div
+      class={`${
+        background === "gray-line" ? "lg:bg-gradient-custom bg-[#f7f9fb]" : ""
+      } pt-[30px]`}
+    >
+      <Title>{title}</Title>
       <Container
-        class={`${containerClasses} pt-[120px]`}
+        class={`${containerClasses} ${handleSpacing(spacing)}`}
         id={slugify(title)}
       >
-        <h2 class="text-center">
-          <Text variant="heading-2">
-            {title}
-          </Text>
-        </h2>
-
         <ul
           class={`flex flex-wrap ${
-            containerSize === "container" ? "px-[10%]" : ""
+            containerSize === "container" ? "px-[10%] gap-y-[20px]" : ""
           }`}
         >
           {items.map((item, index, array) => {

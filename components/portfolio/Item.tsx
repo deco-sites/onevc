@@ -5,22 +5,24 @@ import { method, multi } from "deco-sites/onevc/sdk/multi.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import { tw } from "twind/css";
 import { ItemModal } from "./ItemModal.tsx";
-import type { ItemImage, LabelessItem as Props } from "./types.ts";
+import type {
+  HoverStyle,
+  ImageColor,
+  ItemImage,
+  LabelessItem as Props,
+} from "./types.ts";
 
-//   imageColor: "normal" | "invert" | "grayscale";
-//   hoverStyle: "none" | "zoom-in" | "button";
-
-export const colorHandler = multi<string, ItemImage>(
+export const colorHandler = multi<ItemImage, ImageColor, string>(
   (i) => i.imageColor,
-  method("normal", () => tw``),
-  method("invert", () => tw``),
-  method("grayscale", () => tw`grayscale`),
+  method("normal" as ImageColor, () => tw``),
+  method("invert" as ImageColor, () => tw``),
+  method("grayscale" as ImageColor, () => tw`grayscale`),
 )();
 
 function Item({ image, content }: Props) {
   const isOpen = useSignal(false);
 
-  const hoverHandler = multi<string, ItemImage>(
+  const hoverHandler = multi<ItemImage, HoverStyle, string>(
     (i) => i.hoverStyle,
     method("none", () => tw``),
     method(
@@ -35,7 +37,7 @@ function Item({ image, content }: Props) {
       <Button
         variant="icon"
         onClick={() => isOpen.value = true}
-        class={`flex rounded-none flex-col gap-4 h-full w-full items-center group`}
+        class={`flex rounded-none flex-col h-full w-full items-center group gap-0`}
       >
         <div class="relative">
           {image.hoverStyle === "button"
@@ -57,8 +59,20 @@ function Item({ image, content }: Props) {
             height={215}
           />
         </div>
-        {image.label ? <p class="">{image.label}</p> : null}
-        {image.subLabel ? <p class="">{image.subLabel}</p> : null}
+        {image.label
+          ? (
+            <p class="lg:(text-[22px] mt-[13px] mb-[7px]) mt-[7px] mb-[5px] text-[18px] leading-[20px] font-bold">
+              {image.label}
+            </p>
+          )
+          : null}
+        {image.subLabel
+          ? (
+            <p class="font-medium lg:text-[15px] text-[11px]">
+              {image.subLabel}
+            </p>
+          )
+          : null}
       </Button>
       <Modal
         mode="center"

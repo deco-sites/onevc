@@ -2829,6 +2829,25 @@
           "type": "string",
           "title": "Container Size"
         },
+        "spacing": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "high"
+            },
+            {
+              "type": "string",
+              "const": "medium"
+            },
+            {
+              "type": "string",
+              "const": "low"
+            }
+          ],
+          "type": "string",
+          "title": "Spacing",
+          "description": "Handle internal spacing between elements"
+        },
         "background": {
           "anyOf": [
             {
@@ -2895,6 +2914,7 @@
       "required": [
         "title",
         "containerSize",
+        "spacing",
         "background",
         "itemsJustify",
         "responsivityType",

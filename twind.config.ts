@@ -175,7 +175,7 @@ const options: Omit<Options, "selfURL"> = {
     },
     "bg-gradient-custom": {
       background:
-        "linear-gradient(to bottom,rgba(255,255,255,0) calc(15% + 120px),#f7f9fb 15%,#f7f9fb 75%,rgba(255,255,255,0) 75%)",
+        "linear-gradient(to bottom, rgba(255,255,255,0) 15%, #f7f9fb 15%, #f7f9fb 75%, rgba(255,255,255,0) 75%)",
     },
     backdrop: {
       "&::backdrop": {

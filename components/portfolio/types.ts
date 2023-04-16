@@ -15,12 +15,14 @@ export interface Detail {
 }
 
 export type ImageColor = "normal" | "invert" | "grayscale";
+export type Spacing = "high" | "medium" | "low"
+export type HoverStyle = "none" | "zoom-in" | "button"
 
 export interface ItemImage {
   src: LiveImage;
   alt: string;
   imageColor: ImageColor;
-  hoverStyle: "none" | "zoom-in" | "button";
+  hoverStyle: HoverStyle;
   /**
    * @description Used in cases where the hover style is button
    */
@@ -61,6 +63,10 @@ export type LabelessItem = Omit<Item, "label">;
 export interface Section {
   title: string;
   containerSize: "container" | "full";
+  /**
+   * @description Handle internal spacing between elements
+   */
+  spacing: Spacing;
   background: "white" | "gray-line";
   /**
    * @description If it's justify the last line will be justified within the rest items. If it's free the last line will have rest items

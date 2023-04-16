@@ -29,7 +29,7 @@ export interface Props {
 
 function Hero({ slides, slideTime, image, imageAlt, links }: Props) {
   return (
-    <Container class="py-[73px] flex flex-col justify-between items-center md:(flex-row items-start) lg:(items-center py-[120px]) h-[100vh] relative">
+    <Container class="flex flex-col justify-between items-center relative py-[73px] h-[100vh] mb-[30px] md:(flex-row items-start mb-[120px]) lg:(items-center py-[120px]) ">
       <div class="pl-[10%] pt-[10%] font-extrabold text-[25px] leading-[35px] lg:(text-[55px] leading-[67px]) md:(pt-0 text-[45px] leading-[55px] w-[50%])">
         <HeroUtils type="texts" slides={slides} timing={slideTime} />
       </div>
@@ -41,9 +41,7 @@ function Hero({ slides, slideTime, image, imageAlt, links }: Props) {
           </div>
         )
         : null}
-      <p class="absolute font-bold uppercase left-[5px] bottom-[70px] text-[11px] py-[2px] px-[4px] border-b-1 border-black origin-top-left -rotate-90 lg:(bottom-0 right-0 left-auto origin-top-right rotate-90 text-[12px] leading-[15px])">
-        Scroll to explore
-      </p>
+      <HeroUtils type="scroll-text" />
     </Container>
   );
 }
