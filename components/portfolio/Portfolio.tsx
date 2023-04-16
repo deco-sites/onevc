@@ -27,7 +27,7 @@ function Portfolio({
 
   const containerClasses = tw`${
     containerSize === "full" ? "override:(w-full max-w-full)" : ""
-  } ${background === "gray-line" ? "bg-gradient-custom" : ""}`;
+  }`;
 
   const responsivityClasses = responsivityType === "specific"
     ? tw`lg:w-[${getPercentage(desktopColumns)}%] sm:w-[${
@@ -38,46 +38,48 @@ function Portfolio({
     }%] w-[${getPercentage(desktopColumns - 2)}%]`;
 
   return (
-    <Container
-      class={`${containerClasses} pt-[120px]`}
-      id={slugify(title)}
-    >
-      <h2 class="text-center">
-        <Text variant="heading-2">
-          {title}
-        </Text>
-      </h2>
-
-      <ul
-        class={`flex flex-wrap ${
-          containerSize === "container" ? "px-[10%]" : ""
-        }`}
+    <div class={`${background === "gray-line" ? "bg-gradient-custom" : ""}`}>
+      <Container
+        class={`${containerClasses} pt-[120px]`}
+        id={slugify(title)}
       >
-        {items.map((item, index, array) => {
-          const firstItemLastRow = desktopColumns *
-            (Math.floor(array.length / desktopColumns) - 1);
-          const firstItems = array.length - firstItemLastRow;
+        <h2 class="text-center">
+          <Text variant="heading-2">
+            {title}
+          </Text>
+        </h2>
 
-          const justifyClasses = tw`override:(sm:w-[${
-            getPercentage(firstItems)
-          }%] w-full)`;
+        <ul
+          class={`flex flex-wrap ${
+            containerSize === "container" ? "px-[10%]" : ""
+          }`}
+        >
+          {items.map((item, index, array) => {
+            const firstItemLastRow = desktopColumns *
+              (Math.floor(array.length / desktopColumns) - 1);
+            const firstItems = array.length - firstItemLastRow;
 
-          return (
-            <li
-              class={`${responsivityClasses} ${
-                (firstItemLastRow > index ||
-                    firstItemLastRow > index) && itemsJustify === "justify"
-                  ? justifyClasses
-                  : ""
-              }`}
-              key={index}
-            >
-              <Item {...item as LabelessItem} />
-            </li>
-          );
-        })}
-      </ul>
-    </Container>
+            const justifyClasses = tw`override:(sm:w-[${
+              getPercentage(firstItems)
+            }%] w-full)`;
+
+            return (
+              <li
+                class={`${responsivityClasses} ${
+                  (firstItemLastRow > index ||
+                      firstItemLastRow > index) && itemsJustify === "justify"
+                    ? justifyClasses
+                    : ""
+                }`}
+                key={index}
+              >
+                <Item {...item as LabelessItem} />
+              </li>
+            );
+          })}
+        </ul>
+      </Container>
+    </div>
   );
 }
 
