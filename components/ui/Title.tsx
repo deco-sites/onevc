@@ -12,7 +12,7 @@ export function Title({ children }: Props) {
         aria-hidden="true"
         class="w-[10%] h-[1px] inline-block align-middle bg-black mr-[10px]"
       />
-      <span class="font-extrabold inline-block align-middle">
+      <span class="font-extrabold inline-block align-middle text-[18px] leading-[22px]">
         {children}
       </span>
     </h2>
