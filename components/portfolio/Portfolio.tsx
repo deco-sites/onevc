@@ -47,9 +47,9 @@ function Portfolio({
 
   const handleSpacing = multi<Spacing, Spacing, string>(
     (s) => s,
-    method("high", () => tw`md:pt-[90px] pt-[15%]`),
-    method("medium", () => tw`md:pt-[45px] pt-[10%]`),
-    method("low", () => tw`pt-[20px]`),
+    method("high", () => tw`md:py-[90px] py-[15%]`),
+    method("medium", () => tw`md:py-[45px] py-[10%]`),
+    method("low", () => tw`py-[20px]`),
   )();
 
   return (
