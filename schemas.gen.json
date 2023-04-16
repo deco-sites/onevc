@@ -2843,24 +2843,6 @@
           "type": "string",
           "title": "Background"
         },
-        "space": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "none"
-            },
-            {
-              "type": "string",
-              "const": "around"
-            },
-            {
-              "type": "string",
-              "const": "between"
-            }
-          ],
-          "type": "string",
-          "title": "Space"
-        },
         "itemsJustify": {
           "anyOf": [
             {
@@ -2914,7 +2896,6 @@
         "title",
         "containerSize",
         "background",
-        "space",
         "itemsJustify",
         "responsivityType",
         "desktopColumns"
