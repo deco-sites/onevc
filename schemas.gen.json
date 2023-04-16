@@ -2949,6 +2949,14 @@
           "type": "string",
           "title": "Hover Style"
         },
+        "buttonLabel": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Button Label",
+          "description": "Used in cases where the hover style is button"
+        },
         "label": {
           "type": [
             "string",
@@ -3038,6 +3046,24 @@
           ],
           "title": "Subtitle"
         },
+        "imageColor": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "normal"
+            },
+            {
+              "type": "string",
+              "const": "invert"
+            },
+            {
+              "type": "string",
+              "const": "grayscale"
+            }
+          ],
+          "type": "string",
+          "title": "Image Color"
+        },
         "links": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Link[]",
           "title": "Links"
@@ -3053,6 +3079,7 @@
         }
       },
       "required": [
+        "imageColor",
         "description"
       ],
       "title": "ItemContent"

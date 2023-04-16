@@ -14,11 +14,17 @@ export interface Detail {
   value: string;
 }
 
+export type ImageColor = "normal" | "invert" | "grayscale";
+
 export interface ItemImage {
   src: LiveImage;
   alt: string;
-  imageColor: "normal" | "invert" | "grayscale";
+  imageColor: ImageColor;
   hoverStyle: "none" | "zoom-in" | "button";
+  /**
+   * @description Used in cases where the hover style is button
+   */
+  buttonLabel?: string;
   label?: string;
   subLabel?: string;
 }
@@ -26,6 +32,7 @@ export interface ItemImage {
 export interface ItemContent {
   title?: string;
   subtitle?: string;
+  imageColor: ImageColor;
   links?: Link[];
   details?: Detail[];
   /**

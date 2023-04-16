@@ -1,6 +1,7 @@
 export { default } from "deco-sites/onevc/components/portfolio/Portfolio.tsx";
 export type {
   Detail,
+  ImageColor,
   Item,
   ItemContent,
   ItemImage,
