@@ -15,8 +15,8 @@ export interface Detail {
 }
 
 export type ImageColor = "normal" | "invert" | "grayscale";
-export type Spacing = "high" | "medium" | "low"
-export type HoverStyle = "none" | "zoom-in" | "button"
+export type Spacing = "high" | "medium" | "low";
+export type HoverStyle = "none" | "zoom-in" | "button";
 
 export interface ItemImage {
   src: LiveImage;

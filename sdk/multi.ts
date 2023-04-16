@@ -2,7 +2,10 @@ export type Dispatcher<Key, Value> = (elem: Key) => Value;
 
 export type RootDispatcher<Key, Value> = (elem: Value) => Key;
 
-export type Method<Key, Value, Result> = { value: Value; fn: (k: Key) => Result };
+export type Method<Key, Value, Result> = {
+  value: Value;
+  fn: (k: Key) => Result;
+};
 
 export const method = <Key, Value, Result>(
   value: Value,
