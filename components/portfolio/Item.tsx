@@ -14,23 +14,12 @@ import type {
 
 export const colorHandler = multi<ItemImage, ImageColor, string>(
   (i) => i.imageColor,
-  method("normal" as ImageColor, () => tw``),
-  method("invert" as ImageColor, () => tw``),
+  method("invert" as ImageColor, () => tw`invert brightness-0`),
   method("grayscale" as ImageColor, () => tw`grayscale`),
-)();
+)(() => "");
 
 function Item({ image, content }: Props) {
   const isOpen = useSignal(false);
-
-  const hoverHandler = multi<ItemImage, HoverStyle, string>(
-    (i) => i.hoverStyle,
-    method("none", () => tw``),
-    method(
-      "zoom-in",
-      () => tw`group-hover:(scale-110 grayscale-0 opacity-100) opacity-75`,
-    ),
-    method("button", () => tw``),
-  )();
 
   return (
     <>
@@ -52,7 +41,11 @@ function Item({ image, content }: Props) {
           <Image
             class={`transition-all duration-[250] ease-out ${
               colorHandler(image)
-            } ${hoverHandler(image)}`}
+            } ${
+              image.hoverStyle === "zoom-in"
+                ? "group-hover:(scale-110 grayscale-0 opacity-100) opacity-75"
+                : ""
+            }`}
             src={image.src}
             alt={image.alt}
             width={215}

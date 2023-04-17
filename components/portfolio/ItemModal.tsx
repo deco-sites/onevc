@@ -1,59 +1,93 @@
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import Image from "deco-sites/std/components/Image.tsx";
+import { colorHandler } from "./Item.tsx";
 import type { LabelessItem as Props } from "./types.ts";
 
 export function ItemModal({ image, content }: Props) {
+  const replaceBreakLines = (str: string) =>
+    str.split("<br>").map((line) =>
+      line
+        ? (
+          <p key={line}>
+            {line}
+          </p>
+        )
+        : null
+    );
+
   return (
-    <div>
-      <aside>
-        <Image
-          class=""
-          src={image.src}
-          alt={image.alt}
-          width={215}
-          height={215}
-        />
-        <h2>{content.title}</h2>
-        <p>{content.subtitle}</p>
-        {content.links
-          ? (
-            <ul>
-              {content.links.map((link) => (
-                <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-            </ul>
-          )
-          : null}
-        {content.details
-          ? (
-            <dl>
-              {content.details.map((detail) => (
-                <div class="" key={detail.label}>
-                  <dt>
-                    {detail.label}
-                  </dt>
-                  <dd>
-                    {detail.value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          )
-          : null}
-      </aside>
-      <article>
-        {content.description
-          .split("<br>").map((line) =>
-            line
-              ? (
-                <p key={line}>
-                  {line}
-                </p>
-              )
-              : null
-          )}
-      </article>
-    </div>
+    <Container
+      class={`bg-[${content.backgroundColor ?? "rgba(85,85,85,0.96)"}] `}
+    >
+      <div class="md:(flex flex-row gap-x-[20px] items-center p-[60px]) px-[28px] pt-[60px] pb-[80px] w-full text-white">
+        <aside class="md:(w-[280px] pr-[20px]) lg:(w-[330px] pr-[50px]) w-full">
+          <div class={`${!content.title ? "border-b-1 border-white" : ""}`}>
+            <Image
+              class={`${colorHandler(image)} max-w-full`}
+              src={image.src}
+              alt={image.alt}
+              width={215}
+            />
+          </div>
+          {content.title
+            ? (
+              <h2 class="text-[25px] leading-[30px] font-bold mt-[25px]">
+                {content.title}
+              </h2>
+            )
+            : null}
+          {content.subtitle
+            ? (
+              <p class="px-[9px] py-[3px] mt-[15px] border-1 border-white text-[16px] leading-[19px] font-medium inline-block">
+                {content.subtitle}
+              </p>
+            )
+            : null}
+          {content.links
+            ? (
+              <ul class="mt-[15px] flex flex-wrap">
+                {content.links.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      class="pr-[30px] text-[16px] leading-[19px] font-bold transition-colors duration-[250ms] ease-out hover:text-[rgba(255,255,255,0.6)]"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )
+            : null}
+          {content.details
+            ? (
+              <dl>
+                {content.details.map((detail) => {
+                  const value = replaceBreakLines(detail.value);
+                  return (
+                    <div class="mt-[30px] block" key={detail.label}>
+                      <dt class="font-bold mb-[14px] inline">
+                        {detail.label}
+                        {!detail.label.includes(":") ? ":" : ""}
+                      </dt>{" "}
+                      <dd
+                        class={`inline children:(inline-block ${
+                          value.length > 1 ? "mt-[14px]" : ""
+                        })`}
+                      >
+                        {value}
+                      </dd>
+                    </div>
+                  );
+                })}
+              </dl>
+            )
+            : null}
+        </aside>
+        <article class="lg:column-count-[2] flex-1 w-full">
+          {replaceBreakLines(content.description)}
+        </article>
+      </div>
+    </Container>
   );
 }

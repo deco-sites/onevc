@@ -24,7 +24,7 @@ export interface ItemImage {
   imageColor: ImageColor;
   hoverStyle: HoverStyle;
   /**
-   * @description Used in cases where the hover style is button
+   * @description Used in cases where the hover style is button.
    */
   buttonLabel?: string;
   label?: string;
@@ -35,6 +35,10 @@ export interface ItemContent {
   title?: string;
   subtitle?: string;
   imageColor: ImageColor;
+  /**
+   * @description This can be hex, rgb, rgba or color name. Help to get correct color: https://imagecolorpicker.com/
+   */
+  backgroundColor: string;
   links?: Link[];
   details?: Detail[];
   /**

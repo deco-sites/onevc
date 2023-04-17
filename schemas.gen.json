@@ -2975,7 +2975,7 @@
             "null"
           ],
           "title": "Button Label",
-          "description": "Used in cases where the hover style is button"
+          "description": "Used in cases where the hover style is button."
         },
         "label": {
           "type": [
@@ -3084,6 +3084,11 @@
           "type": "string",
           "title": "Image Color"
         },
+        "backgroundColor": {
+          "type": "string",
+          "title": "Background Color",
+          "description": "This can be hex, rgb, rgba or color name. Help to get correct color: https://imagecolorpicker.com/"
+        },
         "links": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Link[]",
           "title": "Links"
@@ -3100,6 +3105,7 @@
       },
       "required": [
         "imageColor",
+        "backgroundColor",
         "description"
       ],
       "title": "ItemContent"

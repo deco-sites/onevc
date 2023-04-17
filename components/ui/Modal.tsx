@@ -19,6 +19,7 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
   mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
+  backgroundColor?: string;
 };
 
 const dialogStyles = {
@@ -39,10 +40,14 @@ const containerStyles = {
   center: "",
 };
 
+const buttonLinesStyles =
+  "absolute bg-black h-[2px] w-full right-0 transition-all duration-[250ms] ease-out";
+
 const Modal = ({
   open,
   title,
   mode = "sidebar-right",
+  backgroundColor,
   onClose,
   children,
   loading,
@@ -71,7 +76,7 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full backdrop ${
+      class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full ${
         dialogStyles[mode]
       } ${props.class ?? ""}`}
       onClick={(e) =>
@@ -83,20 +88,23 @@ const Modal = ({
         class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
       >
         <div
-          class={`bg-default flex flex-col max-h-full ${containerStyles[mode]}`}
+          class={`bg-default flex flex-col max-h-full relative ${
+            containerStyles[mode]
+          }`}
         >
-          <header class="flex px-4 py-6 justify-between items-center border-b-1 border-default">
-            {title
-              ? (
-                <h1>
-                  <Text variant="heading-2">{title}</Text>
-                </h1>
-              )
-              : null}
-            <Button variant="icon" onClick={onClose}>
-              <Icon id="XMark" width={20} height={20} strokeWidth={2} />
-            </Button>
-          </header>
+          <Button
+            variant="icon"
+            aria-label="close modal"
+            onClick={onClose}
+            class="lg:w-[48px] w-[35px] block relative h-[38px] absolute top-0 right-0"
+          >
+            <div
+              class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
+            />
+            <div
+              class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
+            />
+          </Button>
           <div class="overflow-y-auto flex-grow flex flex-col">
             {loading === "lazy" ? lazy.value && children : children}
           </div>

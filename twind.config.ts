@@ -167,6 +167,18 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
+    "invert-0": {
+      filter: "invert(0)",
+    },
+    "invert": {
+      filter: "invert(100%)",
+    },
+    "brightness-0": {
+      filter: "brightness(0)",
+    },
+    "brightness": {
+      filter: "brightness(100%)",
+    },
     "grayscale-0": {
       filter: "grayscale(0)",
     },
@@ -198,6 +210,9 @@ const options: Omit<Options, "selfURL"> = {
       "max-height": "min-content",
     },
     "snap": ([mod]) => ({ "scroll-snap-align": mod }),
+    "column-count": ([mod]) => ({
+      "column-count": mod.replace(/(^\[)|(\])$/g, ""),
+    }),
     "grid-cols": gridCols,
     "grid-rows": gridRows,
     "scroll-smooth": {
