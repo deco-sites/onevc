@@ -31,8 +31,8 @@ function Item({ image, content }: Props) {
         <div class="relative">
           {image.hoverStyle === "button"
             ? (
-              <div class="lg:(flex items-center justify-center absolute top-0 left-0 group-hover:(h-full) w-full overflow-hidden h-[0%] z-10 bg-[rgba(85,85,85,0.92)] transition-all duration-[250ms] ease-out) hidden">
-                <p class="inline-block px-[29px] py-[16px] border-1 border-white text-white font-bold text-[12px]">
+              <div class="flex items-center justify-center absolute top-0 left-0 group-hover:(h-full) w-full overflow-hidden h-[0%] z-10 bg-[rgba(85,85,85,0.92)] transition-all duration-[250ms] ease-out">
+                <p class="inline-block px-[29px] py-[16px] border-white text-white text-[11px] font-normal md:(border-1 text-[12px] font-bold)">
                   {image.buttonLabel}
                 </p>
               </div>
@@ -68,11 +68,11 @@ function Item({ image, content }: Props) {
           : null}
       </Button>
       <Modal
-        mode="center"
         open={isOpen.value}
         onClose={() => {
           isOpen.value = false;
         }}
+        backgroundColor={content.backgroundColor}
       >
         <ItemModal image={image} content={content} />
       </Modal>

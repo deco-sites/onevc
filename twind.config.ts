@@ -167,6 +167,18 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
+    "open-modal": {
+      transform: "scaleX(1) scaleY(1)",
+      width: "100%",
+    },
+    "close-modal": {
+      transition: "transform .4s ease-in-out 0s, width .4s ease-in-out .4s",
+      transform: "scaleX(1) scaleY(0.005)",
+      width: "0%",
+    },
+    "transition-modal": {
+      transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
+    },
     "invert-0": {
       filter: "invert(0)",
     },

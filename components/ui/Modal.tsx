@@ -1,11 +1,9 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
 import { useSignal } from "@preact/signals";
 import Button from "deco-sites/onevc/components/ui/Button.tsx";
-import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import type { JSX } from "preact";
 import { useEffect, useRef } from "preact/hooks";
-
-import Icon from "./Icon.tsx";
 
 // Lazy load a <dialog> polyfill.
 if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
@@ -16,28 +14,9 @@ if (IS_BROWSER && typeof window.HTMLDialogElement === "undefined") {
 
 export type Props = JSX.IntrinsicElements["dialog"] & {
   title?: string;
-  mode?: "sidebar-right" | "sidebar-left" | "center";
   onClose?: () => Promise<void> | void;
   loading?: "lazy" | "eager";
   backgroundColor?: string;
-};
-
-const dialogStyles = {
-  "sidebar-right": "animate-slide-left",
-  "sidebar-left": "animate-slide-right",
-  center: "animate-fade-in",
-};
-
-const sectionStyles = {
-  "sidebar-right": "justify-end",
-  "sidebar-left": "justify-start",
-  center: "justify-center items-center",
-};
-
-const containerStyles = {
-  "sidebar-right": "h-full w-full sm:(max-w-lg)",
-  "sidebar-left": "h-full w-full sm:(max-w-lg)",
-  center: "",
 };
 
 const buttonLinesStyles =
@@ -46,7 +25,6 @@ const buttonLinesStyles =
 const Modal = ({
   open,
   title,
-  mode = "sidebar-right",
   backgroundColor,
   onClose,
   children,
@@ -54,14 +32,19 @@ const Modal = ({
   ...props
 }: Props) => {
   const lazy = useSignal(false);
+  const animate = useSignal(false);
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     if (open === false) {
-      document.getElementsByTagName("body").item(0)?.removeAttribute(
-        "no-scroll",
-      );
-      ref.current?.open === true && ref.current.close();
+      animate.value = false;
+
+      setTimeout(() => {
+        document.getElementsByTagName("body").item(0)?.removeAttribute(
+          "no-scroll",
+        );
+        ref.current?.open === true && ref.current.close();
+      }, 800);
     } else if (open === true) {
       document.getElementsByTagName("body").item(0)?.setAttribute(
         "no-scroll",
@@ -69,6 +52,7 @@ const Modal = ({
       );
       ref.current?.open === false && ref.current.showModal();
       lazy.value = true;
+      animate.value = true
     }
   }, [open]);
 
@@ -76,40 +60,46 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full ${
-        dialogStyles[mode]
-      } ${props.class ?? ""}`}
+      class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full animate-fade-in ${
+        props.class ?? ""
+      }`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "SECTION" && onClose?.()}
       // @ts-expect-error - This is a bug in types.
       onClose={onClose}
     >
-      <section
-        class={`w-full h-full flex bg-transparent ${sectionStyles[mode]}`}
-      >
-        <div
-          class={`bg-default flex flex-col max-h-full relative ${
-            containerStyles[mode]
-          }`}
-        >
-          <Button
-            variant="icon"
-            aria-label="close modal"
-            onClick={onClose}
-            class="lg:w-[48px] w-[35px] block relative h-[38px] absolute top-0 right-0"
+      <div class="flex justify-center">
+        <section class="h-full flex bg-transparent justify-start items-start">
+          <Container
+            class={`override:${
+              animate.value ? "open-modal" : "close-modal"
+            } override:(px-0 mx-0 md:(px-[28px] top-[28px])) transition-modal relative origin-top-left`}
           >
-            <div
-              class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
-            />
-            <div
-              class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
-            />
-          </Button>
-          <div class="overflow-y-auto flex-grow flex flex-col">
-            {loading === "lazy" ? lazy.value && children : children}
-          </div>
-        </div>
-      </section>
+            <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
+              <div
+                class={`overflow-y-auto flex-grow flex flex-col relative w-full transition-opacity duration-[250ms] ${
+                  open ? "delay-700" : ""
+                } ${animate.value ? "opacity-100" : "opacity-0"}`}
+              >
+                <Button
+                  variant="icon"
+                  aria-label="close modal"
+                  onClick={onClose}
+                  class="w-[35px] h-[35px] block absolute top-[10px] right-[10px] md:top-[25px] md:right-[25px]"
+                >
+                  <div
+                    class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
+                  />
+                  <div
+                    class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
+                  />
+                </Button>
+                {loading === "lazy" ? lazy.value && children : children}
+              </div>
+            </div>
+          </Container>
+        </section>
+      </div>
     </dialog>
   );
 };
