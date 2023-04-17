@@ -52,7 +52,7 @@ const Modal = ({
       );
       ref.current?.open === false && ref.current.showModal();
       lazy.value = true;
-      animate.value = true
+      animate.value = true;
     }
   }, [open]);
 
