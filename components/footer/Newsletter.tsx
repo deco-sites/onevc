@@ -17,7 +17,7 @@ function Newsletter() {
         </p>
         <div class="flex flex-nowrap w-full md:w-auto">
           <input
-            class="flex-1 placeholder::text-black w-full px-[20px] border-b-1 border-black text-[14px] font-bold leading-[35px] text-[#222]"
+            class="flex-1 rounded-none placeholder::text-black w-full px-[20px] border-b-1 border-black text-[14px] font-bold leading-[35px] text-[#222]"
             type="email"
             name="EMAIL"
             placeholder="E-mail"
