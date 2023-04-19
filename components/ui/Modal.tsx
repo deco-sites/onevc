@@ -73,10 +73,11 @@ const Modal = ({
       <div class="flex justify-center">
         <section class="h-full flex bg-transparent justify-start items-start">
           <Container
-            class={`transition-open-modal ${
-              animate.value ? "" : "override:transition-close-modal"
-            } ${
-              animate.value ? "open-modal" : "override:close-modal"
+            style={{ willChange: "transform" }}
+            class={`${
+              animate.value
+                ? "transition-open-modal open-modal"
+                : "override:close-modal override:transition-close-modal"
             } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left`}
           >
             <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
