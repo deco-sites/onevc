@@ -64,7 +64,7 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-full w-full max-h-full h-full animate-fade-in ${
+      class={`bg-transparent relative p-0 m-0 max-w-full w-full max-h-full h-full animate-fade-in ${
         props.class ?? ""
       }`}
       onClick={(e) =>
@@ -72,35 +72,37 @@ const Modal = ({
       // @ts-expect-error - This is a bug in types.
       onClose={onClose}
     >
-      <Container
-        class={`${
-          ref.current?.open && !animate.value
-            ? "transition-close-modal"
-            : "transition-open-modal"
-        } ${
-          animate.value ? "open-modal" : "close-modal"
-        } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left overflow-auto h-full`}
-      >
-        <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
-          <div
-            class={`overflow-y-auto flex-grow flex flex-col relative w-full transition-opacity duration-[250ms] ${
-              open ? "delay-700" : ""
-            } ${animate.value ? "opacity-100" : "opacity-0"}`}
-          >
-            <Button
-              variant="icon"
-              aria-label="close modal"
-              onClick={onClose}
-              class="w-[35px] h-[35px] block absolute top-[10px] right-[10px] md:top-[25px] md:right-[25px]"
+      <Container class="override:(px-0 mx-0 md:(px-[28px] left-[50%] -translate-x-[50%] top-[28px])) absolute">
+        <div
+          class={`${
+            ref.current?.open && !animate.value
+              ? "transition-close-modal"
+              : "transition-open-modal"
+          } ${
+            animate.value ? "open-modal" : "close-modal"
+          } overflow-auto h-full`}
+        >
+          <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
+            <div
+              class={`overflow-y-auto flex-grow flex flex-col relative w-full transition-opacity duration-[250ms] ${
+                open ? "delay-700" : ""
+              } ${animate.value ? "opacity-100" : "opacity-0"}`}
             >
-              <div
-                class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
-              />
-              <div
-                class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
-              />
-            </Button>
-            {loading === "lazy" ? lazy.value && children : children}
+              <Button
+                variant="icon"
+                aria-label="close modal"
+                onClick={onClose}
+                class="w-[35px] h-[35px] block absolute top-[10px] right-[10px] md:top-[25px] md:right-[25px]"
+              >
+                <div
+                  class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
+                />
+                <div
+                  class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
+                />
+              </Button>
+              {loading === "lazy" ? lazy.value && children : children}
+            </div>
           </div>
         </div>
       </Container>

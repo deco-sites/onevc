@@ -68,7 +68,7 @@ function GlobalTags() {
               transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;
             }
             .open-modal {
-              max-height: 100%;
+              max-height: 100vh;
               width: 100%;
             }
             .close-modal {
