@@ -73,10 +73,8 @@ const Modal = ({
       <div class="flex justify-center">
         <section class="h-full flex bg-transparent justify-start items-start">
           <Container
-            class={`${
-              ref.current?.open && animate.value
-                ? "transition-open-modal"
-                : "transition-close-modal"
+            class={`transition-open-modal ${
+              animate.value ? "" : "override:transition-close-modal"
             } ${
               animate.value ? "open-modal" : "override:close-modal"
             } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left`}
