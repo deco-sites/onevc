@@ -33,3 +33,5 @@ export const replaceBreakLines = (str: string) =>
       )
       : null
   );
+
+export const getPercentage = (n: number) => Number((100 / n).toFixed(2));

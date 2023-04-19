@@ -1,7 +1,7 @@
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import { Title } from "deco-sites/onevc/components/ui/Title.tsx";
 import Item from "deco-sites/onevc/islands/Item.tsx";
-import { slugify } from "deco-sites/onevc/sdk/format.tsx";
+import { getPercentage, slugify } from "deco-sites/onevc/sdk/format.tsx";
 import { tw } from "twind/css";
 import type {
   Item as ItemProps,
@@ -31,8 +31,6 @@ function Portfolio({
     mobileColumns = 0,
   },
 }: Props) {
-  const getPercentage = (n: number) => Number((100 / n).toFixed(2));
-
   const containerClasses = tw`${
     containerSize === "full" ? "override:(w-full max-w-full)" : ""
   }`;
@@ -57,12 +55,10 @@ function Portfolio({
       class={`${
         background === "gray-line" ? "lg:bg-gradient-custom bg-[#f7f9fb]" : ""
       } pt-[30px]`}
+      id={slugify(title)}
     >
       <Title>{title}</Title>
-      <Container
-        class={`${containerClasses} ${handleSpacing(spacing)}`}
-        id={slugify(title)}
-      >
+      <Container class={`${containerClasses} ${handleSpacing(spacing)}`}>
         <ul
           class={`flex flex-wrap ${
             containerSize === "container" ? "px-[10%] gap-y-[20px]" : ""

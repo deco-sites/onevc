@@ -20,7 +20,7 @@ export interface Props {
 
 function Contact({ contacts }: Props) {
   return (
-    <section class="mt-[45px]">
+    <section class="mt-[45px]" id="contact">
       <Title>Contact</Title>
       <Container>
         <ul class="flex flex-wrap justify-center py-[35px] mt-[15px] md:(mt-[50px] justify-around)">
