@@ -168,10 +168,10 @@ const options: Omit<Options, "selfURL"> = {
   }),
   plugins: {
     "transition-open-modal": {
-      transition: "width .4s ease-out 0s,transform .4s ease-out .4s",
+      transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
     },
     "transition-close-modal": {
-      transition: "transform .4s ease-out 0s, width .4s ease-out .4s",
+      transition: "transform .4s ease-in-out 0s, width .4s ease-in-out .4s",
     },
     "open-modal": {
       transform: "scaleX(1) scaleY(1)",

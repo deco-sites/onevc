@@ -56,7 +56,7 @@ const Modal = ({
     }
   }, [open]);
 
-  console.log(ref.current?.open && animate.value);
+  console.log(ref.current?.open);
 
   return (
     <dialog
@@ -73,11 +73,12 @@ const Modal = ({
       <div class="flex justify-center">
         <section class="h-full flex bg-transparent justify-start items-start">
           <Container
-            style={{ willChange: "transform" }}
             class={`${
-              animate.value
-                ? "transition-open-modal open-modal"
-                : "override:close-modal override:transition-close-modal"
+              ref.current?.open && !animate.value
+                ? "override:transition-close-modal"
+                : "transition-open-modal"
+            } ${
+              animate.value ? " open-modal" : "override:close-modal "
             } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left`}
           >
             <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
