@@ -4,7 +4,7 @@ import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
 function MenuButton() {
   const { displayMenu } = useUI();
   const baseLines =
-    "absolute bg-black h-[2px] w-full right-0 transition-all duration-[250ms] ease-out will-change-auto";
+    "absolute bg-black h-[2px] w-full right-0 transition-all duration-[250ms] ease-out";
 
   const checkDisplayMenu = (okClasses: string, failClasses = "") => {
     if (displayMenu.value) {

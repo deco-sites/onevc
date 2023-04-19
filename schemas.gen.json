@@ -3978,6 +3978,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1Byb2dyZXNzLnRzeA==": {
+      "title": "./islands/Progress.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/Progress.tsx"
+          ],
+          "default": "./islands/Progress.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL01lbnVCdXR0b24udHN4": {
       "title": "./islands/MenuButton.tsx",
       "type": "object",
@@ -4944,6 +4960,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL05hdmJhci50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1Byb2dyZXNzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL01lbnVCdXR0b24udHN4"

@@ -56,6 +56,8 @@ const Modal = ({
     }
   }, [open]);
 
+  console.log(ref.current?.open && animate.value);
+
   return (
     <dialog
       {...props}
@@ -71,8 +73,12 @@ const Modal = ({
       <div class="flex justify-center">
         <section class="h-full flex bg-transparent justify-start items-start">
           <Container
-            class={`open-modal ${
-              animate.value ? "" : "override:close-modal"
+            class={`${
+              ref.current?.open && animate.value
+                ? "transition-open-modal"
+                : "transition-close-modal"
+            } ${
+              animate.value ? "open-modal" : "override:close-modal"
             } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left`}
           >
             <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>

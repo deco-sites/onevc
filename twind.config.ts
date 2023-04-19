@@ -167,16 +167,17 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
-    "will-change-auto": {
-      "will-change": "auto",
+    "transition-open-modal": {
+      transition: "width .4s ease-out 0s,transform .4s ease-out .4s",
+    },
+    "transition-close-modal": {
+      transition: "transform .4s ease-out 0s, width .4s ease-out .4s",
     },
     "open-modal": {
-      transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
       transform: "scaleX(1) scaleY(1)",
       width: "100%",
     },
     "close-modal": {
-      transition: "transform .4s ease-in-out 0s, width .4s ease-in-out .4s",
       transform: "scaleX(1) scaleY(0.005)",
       width: "0%",
     },
