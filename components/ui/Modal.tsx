@@ -77,10 +77,10 @@ const Modal = ({
           <Container
             class={`${
               ref.current?.open && !animate.value
-                ? "override:transition-close-modal"
+                ? "transition-close-modal"
                 : "transition-open-modal"
             } ${
-              animate.value ? " open-modal" : "override:close-modal "
+              animate.value ? "open-modal" : "close-modal"
             } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left`}
           >
             <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
