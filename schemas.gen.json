@@ -2491,6 +2491,54 @@
       ],
       "title": "deco-sites/onevc/components/ui/Features.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2NvbnRhY3QvQ29udGFjdC50c3g=@Contact": {
+      "type": "object",
+      "properties": {
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        },
+        "imageAlt": {
+          "type": "string",
+          "title": "Image Alt"
+        },
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "address": {
+          "type": "string",
+          "title": "Address",
+          "description": "To add a new line into the text use <br>"
+        }
+      },
+      "required": [
+        "image",
+        "imageAlt",
+        "label",
+        "address"
+      ],
+      "title": "Contact"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2NvbnRhY3QvQ29udGFjdC50c3g=@Contact[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2NvbnRhY3QvQ29udGFjdC50c3g=@Contact"
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2NvbnRhY3QvQ29udGFjdC50c3g=@Props": {
+      "type": "object",
+      "properties": {
+        "contacts": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2NvbnRhY3QvQ29udGFjdC50c3g=@Contact[]",
+          "title": "Contacts"
+        }
+      },
+      "required": [
+        "contacts"
+      ],
+      "title": "deco-sites/onevc/components/contact/Contact.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL0Jhbm5lckdyaWQudHN4@Banner": {
       "type": "object",
       "properties": {
@@ -2592,7 +2640,7 @@
       ],
       "title": "deco-sites/onevc/components/ui/BannerGrid.tsx@Props"
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@StringItem": {
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link": {
       "type": "object",
       "properties": {
         "label": {
@@ -2608,201 +2656,20 @@
         "label",
         "href"
       ],
-      "title": "StringItem"
+      "title": "Link"
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem": {
-      "type": "object",
-      "properties": {
-        "icon": {
-          "anyOf": [
-            {
-              "type": "string",
-              "const": "ChevronLeft"
-            },
-            {
-              "type": "string",
-              "const": "ChevronRight"
-            },
-            {
-              "type": "string",
-              "const": "ChevronUp"
-            },
-            {
-              "type": "string",
-              "const": "ChevronDown"
-            },
-            {
-              "type": "string",
-              "const": "QuestionMarkCircle"
-            },
-            {
-              "type": "string",
-              "const": "User"
-            },
-            {
-              "type": "string",
-              "const": "ShoppingCart"
-            },
-            {
-              "type": "string",
-              "const": "Bars3"
-            },
-            {
-              "type": "string",
-              "const": "Heart"
-            },
-            {
-              "type": "string",
-              "const": "MagnifyingGlass"
-            },
-            {
-              "type": "string",
-              "const": "XMark"
-            },
-            {
-              "type": "string",
-              "const": "Plus"
-            },
-            {
-              "type": "string",
-              "const": "Minus"
-            },
-            {
-              "type": "string",
-              "const": "MapPin"
-            },
-            {
-              "type": "string",
-              "const": "Phone"
-            },
-            {
-              "type": "string",
-              "const": "Elo"
-            },
-            {
-              "type": "string",
-              "const": "Mastercard"
-            },
-            {
-              "type": "string",
-              "const": "Visa"
-            },
-            {
-              "type": "string",
-              "const": "Pix"
-            },
-            {
-              "type": "string",
-              "const": "Logo"
-            },
-            {
-              "type": "string",
-              "const": "Facebook"
-            },
-            {
-              "type": "string",
-              "const": "Instagram"
-            },
-            {
-              "type": "string",
-              "const": "Tiktok"
-            },
-            {
-              "type": "string",
-              "const": "Truck"
-            },
-            {
-              "type": "string",
-              "const": "Discount"
-            },
-            {
-              "type": "string",
-              "const": "Return"
-            },
-            {
-              "type": "string",
-              "const": "CreditCard"
-            },
-            {
-              "type": "string",
-              "const": "Deco"
-            },
-            {
-              "type": "string",
-              "const": "Discord"
-            },
-            {
-              "type": "string",
-              "const": "Trash"
-            },
-            {
-              "type": "string",
-              "const": "FilterList"
-            },
-            {
-              "type": "string",
-              "const": "WhatsApp"
-            },
-            {
-              "type": "string",
-              "const": "ArrowsPointingOut"
-            }
-          ],
-          "type": "string",
-          "title": "Icon"
-        }
-      },
-      "required": [
-        "icon"
-      ],
-      "title": "IconItem"
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem": {
-      "anyOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@StringItem"
-        },
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem"
-        }
-      ]
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem[]": {
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link[]": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem"
-      }
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section": {
-      "type": "object",
-      "properties": {
-        "label": {
-          "type": "string",
-          "title": "Label"
-        },
-        "children": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@IconItem|StringItem[]",
-          "title": "Children"
-        }
-      },
-      "required": [
-        "label",
-        "children"
-      ],
-      "title": "Section"
-    },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section[]": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section"
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link"
       }
     },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Props": {
       "type": "object",
       "properties": {
-        "sections": {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Section[]",
-          "title": "Sections"
+        "links": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2Zvb3Rlci9Gb290ZXIudHN4@Link[]",
+          "title": "Links"
         }
       },
       "required": [],
@@ -3085,7 +2952,10 @@
           "title": "Image Color"
         },
         "backgroundColor": {
-          "type": "string",
+          "type": [
+            "string",
+            "null"
+          ],
           "title": "Background Color",
           "description": "This can be hex, rgb, rgba or color name. Help to get correct color: https://imagecolorpicker.com/"
         },
@@ -3105,7 +2975,6 @@
       },
       "required": [
         "imageColor",
-        "backgroundColor",
         "description"
       ],
       "title": "ItemContent"
@@ -4394,6 +4263,27 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Db250YWN0LnRzeA==": {
+      "title": "deco-sites/onevc/sections/Contact.tsx",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2NvbnRhY3QvQ29udGFjdC50c3g=@Props"
+        }
+      ],
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/onevc/sections/Contact.tsx"
+          ],
+          "default": "deco-sites/onevc/sections/Contact.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA==": {
       "title": "deco-sites/onevc/sections/BannerGrid.tsx",
       "type": "object",
@@ -5123,6 +5013,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9GZWF0dXJlcy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Db250YWN0LnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9CYW5uZXJHcmlkLnRzeA=="

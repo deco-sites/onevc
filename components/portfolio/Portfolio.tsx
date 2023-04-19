@@ -1,7 +1,7 @@
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import { Title } from "deco-sites/onevc/components/ui/Title.tsx";
 import Item from "deco-sites/onevc/islands/Item.tsx";
-import { slugify } from "deco-sites/onevc/sdk/format.ts";
+import { slugify } from "deco-sites/onevc/sdk/format.tsx";
 import { tw } from "twind/css";
 import type {
   Item as ItemProps,

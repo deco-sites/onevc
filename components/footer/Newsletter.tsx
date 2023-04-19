@@ -1,30 +1,38 @@
-import Text from "deco-sites/onevc/components/ui/Text.tsx";
+import Button from "deco-sites/onevc/components/ui/Button.tsx";
+import Container from "deco-sites/onevc/components/ui/Container.tsx";
 
 function Newsletter() {
   return (
-    <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-20">
-      <div class="flex flex-col gap-2 max-w-[400px]">
-        <Text variant="heading-2" tone="default-inverse">
-          Cadastre-se
-        </Text>
-        <Text variant="caption" tone="default-inverse">
-          Fique por dentro das novidades e ganhe 15% de desconto na primeira
-          compra. Para mais informações clique aqui.
-        </Text>
-      </div>
-      <form class="flex flex-row items-center gap-2 font-body text-body w-full sm:w-[408px]">
-        <input
-          class="py-2 px-3 flex-grow bg-footer rounded text-default-inverse border-1 border-default"
-          placeholder="Seu e-mail"
-        />
-        <button
-          class="py-2 px-3 bg-interactive-inverse rounded"
-          type="bgutton" // prevent form's default behavior
-        >
-          Cadastrar
-        </button>
+    <Container>
+      <form
+        id="form-newsletter"
+        target="_blank"
+        class="flex flex-col w-full items-start md:(items-center justify-center flex-row)"
+        method="post"
+        action="https://oneventures.us18.list-manage.com/subscribe/post?u=d40cb0ee26af0d5f6f1ec9bfa&amp;id=cad1ec8303"
+      >
+        <p class="text-[20px] leading-[24px] mb-[40px] pr-[50px] md:(mb-0 text-[35px] leading-[43px])">
+          <span class="block">Subscribe</span>
+          to our <strong>newsletter</strong>
+        </p>
+        <div class="flex flex-nowrap w-full md:w-auto">
+          <input
+            class="flex-1 placeholder::text-black w-full px-[20px] border-b-1 border-black text-[14px] font-bold leading-[35px] text-[#222]"
+            type="email"
+            name="EMAIL"
+            placeholder="E-mail"
+            required
+          />
+          <Button
+            variant="primary"
+            class="text-[12px] leading-[20px] md:text-[17px]"
+            type="submit"
+          >
+            Subscribe
+          </Button>
+        </div>
       </form>
-    </div>
+    </Container>
   );
 }
 

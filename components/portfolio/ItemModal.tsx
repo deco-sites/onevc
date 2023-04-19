@@ -1,19 +1,9 @@
 import Image from "deco-sites/std/components/Image.tsx";
 import { colorHandler } from "./Item.tsx";
 import type { LabelessItem as Props } from "./types.ts";
+import { replaceBreakLines } from "deco-sites/onevc/sdk/format.tsx";
 
 export function ItemModal({ image, content }: Props) {
-  const replaceBreakLines = (str: string) =>
-    str.split("<br>").map((line) =>
-      line
-        ? (
-          <p key={line}>
-            {line}
-          </p>
-        )
-        : null
-    );
-
   return (
     <>
       <div class="md:(flex flex-row gap-x-[20px] items-center p-[60px]) px-[28px] pt-[60px] pb-[80px] w-full text-white">

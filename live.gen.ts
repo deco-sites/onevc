@@ -18,13 +18,14 @@ import * as $$$$$$$$0 from "./sections/Hero.tsx";
 import * as $$$$$$$$1 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$2 from "./sections/DesignSystem.story.tsx";
 import * as $$$$$$$$3 from "./sections/Features.tsx";
-import * as $$$$$$$$4 from "./sections/BannerGrid.tsx";
-import * as $$$$$$$$5 from "./sections/Footer.tsx";
-import * as $$$$$$$$6 from "./sections/CookieConsent.tsx";
-import * as $$$$$$$$7 from "./sections/Portfolio.tsx";
-import * as $$$$$$$$8 from "./sections/Header.tsx";
-import * as $$$$$$$$9 from "./sections/WhatsApp.tsx";
-import * as $$$$$$$$10 from "./sections/Carousel.tsx";
+import * as $$$$$$$$4 from "./sections/Contact.tsx";
+import * as $$$$$$$$5 from "./sections/BannerGrid.tsx";
+import * as $$$$$$$$6 from "./sections/Footer.tsx";
+import * as $$$$$$$$7 from "./sections/CookieConsent.tsx";
+import * as $$$$$$$$8 from "./sections/Portfolio.tsx";
+import * as $$$$$$$$9 from "./sections/Header.tsx";
+import * as $$$$$$$$10 from "./sections/WhatsApp.tsx";
+import * as $$$$$$$$11 from "./sections/Carousel.tsx";
 import * as $live_middleware from "$live/routes/_middleware.ts";
 import * as $live_workbench from "$live/routes/live/workbench.ts";
 import * as $live_editorData from "$live/routes/live/editorData.ts";
@@ -106,13 +107,14 @@ const manifest: DecoManifest = {
     "deco-sites/onevc/sections/LinkTree.tsx": $$$$$$$$1,
     "deco-sites/onevc/sections/DesignSystem.story.tsx": $$$$$$$$2,
     "deco-sites/onevc/sections/Features.tsx": $$$$$$$$3,
-    "deco-sites/onevc/sections/BannerGrid.tsx": $$$$$$$$4,
-    "deco-sites/onevc/sections/Footer.tsx": $$$$$$$$5,
-    "deco-sites/onevc/sections/CookieConsent.tsx": $$$$$$$$6,
-    "deco-sites/onevc/sections/Portfolio.tsx": $$$$$$$$7,
-    "deco-sites/onevc/sections/Header.tsx": $$$$$$$$8,
-    "deco-sites/onevc/sections/WhatsApp.tsx": $$$$$$$$9,
-    "deco-sites/onevc/sections/Carousel.tsx": $$$$$$$$10,
+    "deco-sites/onevc/sections/Contact.tsx": $$$$$$$$4,
+    "deco-sites/onevc/sections/BannerGrid.tsx": $$$$$$$$5,
+    "deco-sites/onevc/sections/Footer.tsx": $$$$$$$$6,
+    "deco-sites/onevc/sections/CookieConsent.tsx": $$$$$$$$7,
+    "deco-sites/onevc/sections/Portfolio.tsx": $$$$$$$$8,
+    "deco-sites/onevc/sections/Header.tsx": $$$$$$$$9,
+    "deco-sites/onevc/sections/WhatsApp.tsx": $$$$$$$$10,
+    "deco-sites/onevc/sections/Carousel.tsx": $$$$$$$$11,
     "$live/sections/PageInclude.tsx": i2$$$9,
     "deco-sites/std/sections/configYourViews.global.tsx": i2$$$0,
     "deco-sites/std/sections/SEO.tsx": i2$$$1,

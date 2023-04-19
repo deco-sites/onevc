@@ -5,12 +5,7 @@ import { method, multi } from "deco-sites/onevc/sdk/multi.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import { tw } from "twind/css";
 import { ItemModal } from "./ItemModal.tsx";
-import type {
-  HoverStyle,
-  ImageColor,
-  ItemImage,
-  LabelessItem as Props,
-} from "./types.ts";
+import type { ImageColor, ItemImage, LabelessItem as Props } from "./types.ts";
 
 export const colorHandler = multi<ItemImage, ImageColor, string>(
   (i) => i.imageColor,

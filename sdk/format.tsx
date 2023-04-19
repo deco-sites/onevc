@@ -22,3 +22,14 @@ export const slugify = (str: string): string =>
     .replace(/[^\w\s-]/g, "")
     .replace(/[\s_-]+/g, "-")
     .replace(/^-+|-+$/g, "");
+
+export const replaceBreakLines = (str: string) =>
+  str.split("<br>").map((line) =>
+    line
+      ? (
+        <p key={line}>
+          {line}
+        </p>
+      )
+      : null
+  );

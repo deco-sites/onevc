@@ -38,7 +38,7 @@ export interface ItemContent {
   /**
    * @description This can be hex, rgb, rgba or color name. Help to get correct color: https://imagecolorpicker.com/
    */
-  backgroundColor: string;
+  backgroundColor?: string;
   links?: Link[];
   details?: Detail[];
   /**
