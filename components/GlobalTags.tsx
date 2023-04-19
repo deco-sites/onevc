@@ -57,6 +57,32 @@ function GlobalTags() {
             body {
               font-family: "Montserrat", sans-serif;
             }
+            .transition-open-modal {
+              -webkit-transition: width .4s ease-in-out 0s, -webkit-transform .4s ease-in-out .4s;
+              transition: width .4s ease-in-out 0s, -webkit-transform .4s ease-in-out .4s;
+              -o-transition: width .4s ease-in-out 0s, transform .4s ease-in-out .4s;
+              transition: width .4s ease-in-out 0s, transform .4s ease-in-out .4s;
+              transition: width .4s ease-in-out 0s, transform .4s ease-in-out .4s, -webkit-transform .4s ease-in-out .4s;
+            }
+            .transition-close-modal {
+              -webkit-transition: width .4s ease-in-out .4s, -webkit-transform .4s ease-in-out 0s;
+              transition: width .4s ease-in-out .4s, -webkit-transform .4s ease-in-out 0s;
+              -o-transition: transform .4s ease-in-out 0s, width .4s ease-in-out .4s;
+              transition: transform .4s ease-in-out 0s, width .4s ease-in-out .4s;
+              transition: transform .4s ease-in-out 0s, width .4s ease-in-out .4s, -webkit-transform .4s ease-in-out 0s;
+            }
+            .open-modal {
+              -webkit-transform: scaleX(1) scaleY(1);
+                  -ms-transform: scaleX(1) scaleY(1);
+                      transform: scaleX(1) scaleY(1);
+              width: 100%;
+            }
+            .close-modal {
+              -webkit-transform: scaleX(1) scaleY(0.005);
+                  -ms-transform: scaleX(1) scaleY(0.005);
+                      transform: scaleX(1) scaleY(0.005);
+              width: 0%;
+            }
           `,
         }}
       />
