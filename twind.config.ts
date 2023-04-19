@@ -168,6 +168,7 @@ const options: Omit<Options, "selfURL"> = {
   }),
   plugins: {
     "open-modal": {
+      transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
       transform: "scaleX(1) scaleY(1)",
       width: "100%",
     },
@@ -175,9 +176,6 @@ const options: Omit<Options, "selfURL"> = {
       transition: "transform .4s ease-in-out 0s, width .4s ease-in-out .4s",
       transform: "scaleX(1) scaleY(0.005)",
       width: "0%",
-    },
-    "transition-modal": {
-      transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
     },
     "invert-0": {
       filter: "invert(0)",
