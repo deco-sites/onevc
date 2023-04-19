@@ -58,29 +58,21 @@ function GlobalTags() {
               font-family: "Montserrat", sans-serif;
             }
             .transition-open-modal {
-              -webkit-transition: width .4s ease-in-out 0s, -webkit-transform .4s ease-in-out .4s;
-              transition: width .4s ease-in-out 0s, -webkit-transform .4s ease-in-out .4s;
-              -o-transition: width .4s ease-in-out 0s, transform .4s ease-in-out .4s;
-              transition: width .4s ease-in-out 0s, transform .4s ease-in-out .4s;
-              transition: width .4s ease-in-out 0s, transform .4s ease-in-out .4s, -webkit-transform .4s ease-in-out .4s;
+              -webkit-transition: width .4s ease-in-out 0s, max-height .4s ease-in-out .4s;
+              -o-transition: width .4s ease-in-out 0s, max-height .4s ease-in-out .4s;
+              transition: width .4s ease-in-out 0s, max-height .4s ease-in-out .4s;
             }
             .transition-close-modal {
-              -webkit-transition: width .4s ease-in-out .4s, -webkit-transform .4s ease-in-out 0s;
-              transition: width .4s ease-in-out .4s, -webkit-transform .4s ease-in-out 0s;
-              -o-transition: transform .4s ease-in-out 0s, width .4s ease-in-out .4s;
-              transition: transform .4s ease-in-out 0s, width .4s ease-in-out .4s;
-              transition: transform .4s ease-in-out 0s, width .4s ease-in-out .4s, -webkit-transform .4s ease-in-out 0s;
+              -webkit-transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;;
+              -o-transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;
+              transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;
             }
             .open-modal {
-              -webkit-transform: scaleX(1) scaleY(1);
-                  -ms-transform: scaleX(1) scaleY(1);
-                      transform: scaleX(1) scaleY(1);
+              max-height: 100%;
               width: 100%;
             }
             .close-modal {
-              -webkit-transform: scaleX(1) scaleY(0.005);
-                  -ms-transform: scaleX(1) scaleY(0.005);
-                      transform: scaleX(1) scaleY(0.005);
+              max-height: 10px;
               width: 0%;
             }
           `,

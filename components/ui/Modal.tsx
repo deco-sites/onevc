@@ -72,42 +72,38 @@ const Modal = ({
       // @ts-expect-error - This is a bug in types.
       onClose={onClose}
     >
-      <div class="flex justify-center">
-        <section class="h-full flex bg-transparent justify-start items-start">
-          <Container
-            class={`${
-              ref.current?.open && !animate.value
-                ? "transition-close-modal"
-                : "transition-open-modal"
-            } ${
-              animate.value ? "open-modal" : "close-modal"
-            } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left`}
+      <Container
+        class={`${
+          ref.current?.open && !animate.value
+            ? "transition-close-modal"
+            : "transition-open-modal"
+        } ${
+          animate.value ? "open-modal" : "close-modal"
+        } override:(px-0 mx-0 md:(px-[28px] top-[28px])) relative origin-top-left overflow-auto h-full`}
+      >
+        <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
+          <div
+            class={`overflow-y-auto flex-grow flex flex-col relative w-full transition-opacity duration-[250ms] ${
+              open ? "delay-700" : ""
+            } ${animate.value ? "opacity-100" : "opacity-0"}`}
           >
-            <div class={`bg-[${backgroundColor ?? "rgba(85,85,85,0.96)"}]`}>
+            <Button
+              variant="icon"
+              aria-label="close modal"
+              onClick={onClose}
+              class="w-[35px] h-[35px] block absolute top-[10px] right-[10px] md:top-[25px] md:right-[25px]"
+            >
               <div
-                class={`overflow-y-auto flex-grow flex flex-col relative w-full transition-opacity duration-[250ms] ${
-                  open ? "delay-700" : ""
-                } ${animate.value ? "opacity-100" : "opacity-0"}`}
-              >
-                <Button
-                  variant="icon"
-                  aria-label="close modal"
-                  onClick={onClose}
-                  class="w-[35px] h-[35px] block absolute top-[10px] right-[10px] md:top-[25px] md:right-[25px]"
-                >
-                  <div
-                    class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
-                  />
-                  <div
-                    class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
-                  />
-                </Button>
-                {loading === "lazy" ? lazy.value && children : children}
-              </div>
-            </div>
-          </Container>
-        </section>
-      </div>
+                class={`${buttonLinesStyles} bg-white top-[50%] -rotate-45`}
+              />
+              <div
+                class={`${buttonLinesStyles} bottom-0 bg-white top-[50%] rotate-45`}
+              />
+            </Button>
+            {loading === "lazy" ? lazy.value && children : children}
+          </div>
+        </div>
+      </Container>
     </dialog>
   );
 };
