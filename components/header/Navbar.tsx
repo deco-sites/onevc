@@ -32,7 +32,7 @@ function Navbar({ menu, links }: Props) {
     <header
       class={`fixed w-screen z-50 transition-colors duration-[250ms] ease-out ${
         checkDisplayMenu(
-          "bg-[rgba(85,85,85,0.99)]!",
+          "override:bg-[rgba(85,85,85,0.99)]",
           isScrolled.value
             ? "bg-[rgba(255,255,255,0.95)]"
             : "md:bg-transparent",
@@ -43,7 +43,7 @@ function Navbar({ menu, links }: Props) {
         class={`transition-all relative duration-[250ms] ease-out py-[15px] flex flex-col justify-between ${
           checkDisplayMenu(
             "h-[100vh]",
-            isScrolled.value ? "h-[77px]" : "lg:h-[119px] h-[77px]",
+            isScrolled.value ? "lg:h-[77px] h-[57px]" : "lg:h-[119px] h-[57px]",
           )
         } ${!isScrolled.value || displayMenu.value ? "lg:py-[36px]" : ""}`}
       >

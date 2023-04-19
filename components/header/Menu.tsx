@@ -20,7 +20,7 @@ function Menu({ items, onClick }: Props) {
     window.scroll({
       behavior: "smooth",
       left: 0,
-      top: element?.offsetTop ?? 0,
+      top: (element?.offsetTop ?? 0) - 57,
     });
 
     onClick();
