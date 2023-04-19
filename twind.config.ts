@@ -167,6 +167,9 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
+    "will-change-auto": {
+      "will-change": "auto",
+    },
     "open-modal": {
       transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
       transform: "scaleX(1) scaleY(1)",

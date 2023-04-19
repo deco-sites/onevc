@@ -4,7 +4,7 @@ import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
 function MenuButton() {
   const { displayMenu } = useUI();
   const baseLines =
-    "absolute bg-black h-[2px] w-full right-0 transition-all duration-[250ms] ease-out";
+    "absolute bg-black h-[2px] w-full right-0 transition-all duration-[250ms] ease-out will-change-auto";
 
   const checkDisplayMenu = (okClasses: string, failClasses = "") => {
     if (displayMenu.value) {
@@ -36,7 +36,7 @@ function MenuButton() {
       />
       <div
         class={`${baseLines} bottom-0 ${
-          checkDisplayMenu("bg-white top-[50%] rotate-45", "lg:w-[70%]")
+          checkDisplayMenu("bg-white top-[50%] rotate-45", "w-[70%]")
         }`}
       />
     </Button>
