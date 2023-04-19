@@ -72,7 +72,7 @@ const Modal = ({
       // @ts-expect-error - This is a bug in types.
       onClose={onClose}
     >
-      <Container class="override:(px-0 mx-0 md:(px-[28px] left-[50%] -translate-x-[50%] top-[28px])) absolute">
+      <Container class="override:(px-0 mx-0 md:(px-[28px] left-[50%] -translate-x-[50%] top-[28px])) fixed">
         <div
           class={`${
             ref.current?.open && !animate.value
