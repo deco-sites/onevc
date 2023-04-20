@@ -10,7 +10,7 @@ export function Image({ index, item }: Props) {
   const { displayTab } = useUI();
 
   if (displayTab.value !== index) {
-    return <></>;
+    return <div class="hidden" aria-hidden="true" />;
   }
 
   return (
