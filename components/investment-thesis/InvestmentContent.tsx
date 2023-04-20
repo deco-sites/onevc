@@ -23,12 +23,11 @@ export function Content({ text, items }: Props) {
     const intersectionObserver = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         visible.value = entries[0].isIntersecting;
-
         if (entries[0].isIntersecting) {
           intersectionObserver.disconnect();
         }
       },
-      { root: null, rootMargin: "0px", threshold: 1.0 },
+      { root: null, rootMargin: "0px", threshold: 1 },
     );
 
     intersectionObserver.observe(ref.current);
@@ -46,17 +45,17 @@ export function Content({ text, items }: Props) {
   const hideElements = (direction: string) =>
     tw`override:(opacity-0 ${direction}-[50px])`;
 
-  const commonClasses = tw`${transition} relative opacity-0`;
+  const commonClasses = tw`${transition} relative`;
 
   const textClasses = tw`${
-    visible.value && displayTab.value === null
-      ? showElements("left")
-      : hideElements("left")
-  } ${commonClasses} text-[30px] font-bold leading-[37px]`;
+    visible.value ? showElements("left") : hideElements("left")
+  } ${
+    displayTab.value !== null && `md:${hideElements("left")}`
+  } ${commonClasses} font-bold text-[19px] leading-[23px] mb-[40px] md:(text-[30px] leading-[37px] mb-0)`;
 
   const listClasses = tw`${
     visible.value ? showElements("top") : hideElements("top")
-  } ${commonClasses} flex flex-row flex-nowrap`;
+  } ${commonClasses} md:flex flex-row flex-nowrap justiry-start`;
 
   return (
     <>

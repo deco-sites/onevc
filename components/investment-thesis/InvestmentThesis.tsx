@@ -16,13 +16,13 @@ export interface Props {
 
 function InvestmentThesis({ initialText, items }: Props) {
   return (
-    <div id="investment-thesis">
+    <div id="investment-thesis" class="relative">
       <Title>Investment Thesis</Title>
       {items.map((item, index) => (
         <InvestmentUtils type="image" item={item} index={index} key={index} />
       ))}
 
-      <Container class="o-content-block">
+      <Container class="md:(flex py-[90px]) py-[10%] justify-between">
         <InvestmentUtils type="content" items={items} text={initialText} />
       </Container>
     </div>

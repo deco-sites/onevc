@@ -28,8 +28,8 @@ export function Image({ index, item }: Props) {
     <img
       src={item.image}
       class={`${previousTab.current === null && "delay-[500ms]"} ${
-        animate.value && "override:(left-0 ease-out duration-[600ms])"
-      } left-[-200%] absolute transition-['left'] duration-[400ms] ease-in`}
+        animate.value && "override:(md:left-0 -left-[20%] ease-out duration-[600ms])"
+      } left-[-200%] top-[50%] -translate-y-[50%] -z-1 absolute transition-['left'] duration-[400ms] ease-in md:opacity-100 opacity-25`}
       alt="Illustration"
       aria-hidden="true"
     />
