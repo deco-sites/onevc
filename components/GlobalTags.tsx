@@ -57,24 +57,6 @@ function GlobalTags() {
             body {
               font-family: "Montserrat", sans-serif;
             }
-            .transition-open-modal {
-              -webkit-transition: width .4s ease-in-out 0s, max-height .4s ease-in-out .4s;
-              -o-transition: width .4s ease-in-out 0s, max-height .4s ease-in-out .4s;
-              transition: width .4s ease-in-out 0s, max-height .4s ease-in-out .4s;
-            }
-            .transition-close-modal {
-              -webkit-transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;;
-              -o-transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;
-              transition: max-height .4s ease-in-out 0s, width .4s ease-in-out .4s;
-            }
-            .open-modal {
-              max-height: 100vh;
-              width: 100%;
-            }
-            .close-modal {
-              max-height: 10px;
-              width: 0%;
-            }
           `,
         }}
       />

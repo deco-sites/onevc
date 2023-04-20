@@ -167,20 +167,28 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
-    // "transition-open-modal": {
-    //   transition: "width .4s ease-in-out 0s,transform .4s ease-in-out .4s",
-    // },
-    // "transition-close-modal": {
-    //   transition: "transform .4s ease-in-out 0s, width .4s ease-in-out .4s",
-    // },
-    // "open-modal": {
-    //   transform: "scaleX(1) scaleY(1)",
-    //   width: "100%",
-    // },
-    // "close-modal": {
-    //   transform: "scaleX(1) scaleY(0.005)",
-    //   width: "0%",
-    // },
+    "transition-open-modal": {
+      "-webkit-transition":
+        "width .4s ease-in-out 0s, max-height .4s ease-in-out .4s",
+      "-o-transition":
+        "width .4s ease-in-out 0s, max-height .4s ease-in-out .4s",
+      "transition": "width .4s ease-in-out 0s, max-height .4s ease-in-out .4s",
+    },
+    "transition-close-modal": {
+      "-webkit-transition":
+        "max-height .4s ease-in-out 0s, width .4s ease-in-out .4s",
+      "-o-transition":
+        "max-height .4s ease-in-out 0s, width .4s ease-in-out .4s",
+      "transition": "max-height .4s ease-in-out 0s, width .4s ease-in-out .4s",
+    },
+    "open-modal": {
+      "max-height": "100vh",
+      "width": "100%",
+    },
+    "close-modal": {
+      "max-height": "10px",
+      "width": "0%",
+    },
     "invert-0": {
       filter: "invert(0)",
     },
