@@ -12,10 +12,10 @@ import * as $$$$$1 from "./islands/InvestmentUtils.tsx";
 import * as $$$$$2 from "./islands/Progress.tsx";
 import * as $$$$$3 from "./islands/MenuButton.tsx";
 import * as $$$$$4 from "./islands/SendEventButton.tsx";
-import * as $$$$$5 from "./islands/Item.tsx";
-import * as $$$$$6 from "./islands/SliderJS.tsx";
-import * as $$$$$7 from "./islands/ViewSendEvent.tsx";
-import * as $$$$$8 from "./islands/HeroUtils.tsx";
+import * as $$$$$5 from "./islands/SliderJS.tsx";
+import * as $$$$$6 from "./islands/ViewSendEvent.tsx";
+import * as $$$$$7 from "./islands/HeroUtils.tsx";
+import * as $$$$$8 from "./islands/PortfolioUtils.tsx";
 import * as $$$$$$$$0 from "./sections/Hero.tsx";
 import * as $$$$$$$$1 from "./sections/LinkTree.tsx";
 import * as $$$$$$$$2 from "./sections/DesignSystem.story.tsx";
@@ -102,10 +102,10 @@ const manifest: DecoManifest = {
     "./islands/Progress.tsx": $$$$$2,
     "./islands/MenuButton.tsx": $$$$$3,
     "./islands/SendEventButton.tsx": $$$$$4,
-    "./islands/Item.tsx": $$$$$5,
-    "./islands/SliderJS.tsx": $$$$$6,
-    "./islands/ViewSendEvent.tsx": $$$$$7,
-    "./islands/HeroUtils.tsx": $$$$$8,
+    "./islands/SliderJS.tsx": $$$$$5,
+    "./islands/ViewSendEvent.tsx": $$$$$6,
+    "./islands/HeroUtils.tsx": $$$$$7,
+    "./islands/PortfolioUtils.tsx": $$$$$8,
   },
   "sections": {
     "deco-sites/onevc/sections/Hero.tsx": $$$$$$$$0,

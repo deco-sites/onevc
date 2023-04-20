@@ -60,6 +60,10 @@ export interface Item {
    * @description Modal content settings
    */
   content: ItemContent;
+  /**
+   * @description This value will link with the filters setup
+   */
+  filterKey?: string;
 }
 
 export type LabelessItem = Omit<Item, "label">;
@@ -83,4 +87,9 @@ export interface Section {
   desktopColumns: number;
   tabletColumns?: number;
   mobileColumns?: number;
+}
+
+export interface Filter {
+  label: string;
+  key: string;
 }

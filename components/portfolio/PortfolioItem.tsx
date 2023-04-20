@@ -4,7 +4,7 @@ import Modal from "deco-sites/onevc/components/ui/Modal.tsx";
 import { method, multi } from "deco-sites/onevc/sdk/multi.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import { tw } from "twind/css";
-import { ItemModal } from "./ItemModal.tsx";
+import { PortfolioModal } from "./PortfolioModal.tsx";
 import type { ImageColor, ItemImage, LabelessItem as Props } from "./types.ts";
 
 export const colorHandler = multi<ItemImage, ImageColor, string>(
@@ -13,7 +13,7 @@ export const colorHandler = multi<ItemImage, ImageColor, string>(
   method("grayscale" as ImageColor, () => tw`grayscale`),
 )(() => "");
 
-function Item({ image, content }: Props) {
+export function Item({ image, content }: Props) {
   const isOpen = useSignal(false);
 
   return (
@@ -69,10 +69,8 @@ function Item({ image, content }: Props) {
         }}
         backgroundColor={content.backgroundColor}
       >
-        <ItemModal image={image} content={content} />
+        <PortfolioModal image={image} content={content} />
       </Modal>
     </>
   );
 }
-
-export default Item;

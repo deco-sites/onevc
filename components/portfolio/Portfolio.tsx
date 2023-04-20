@@ -1,9 +1,10 @@
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import { Title } from "deco-sites/onevc/components/ui/Title.tsx";
-import Item from "deco-sites/onevc/islands/Item.tsx";
+import PortfolioUtils from "deco-sites/onevc/islands/PortfolioUtils.tsx";
 import { getPercentage, slugify } from "deco-sites/onevc/sdk/format.tsx";
 import { tw } from "twind/css";
 import type {
+  Filter,
   Item as ItemProps,
   LabelessItem,
   Section,
@@ -15,10 +16,12 @@ import { method } from "deco-sites/onevc/sdk/multi.ts";
 export interface Props {
   section: Section;
   items: ItemProps[];
+  filters?: Filter[];
 }
 
 function Portfolio({
   items = [],
+  filters,
   section: {
     title,
     containerSize,
@@ -58,6 +61,9 @@ function Portfolio({
       id={slugify(title)}
     >
       <Title>{title}</Title>
+      {filters?.length
+        ? <PortfolioUtils type="filter" filters={filters} />
+        : null}
       <Container class={`${containerClasses} ${handleSpacing(spacing)}`}>
         <ul
           class={`flex flex-wrap ${
@@ -83,7 +89,7 @@ function Portfolio({
                 }`}
                 key={index}
               >
-                <Item {...item as LabelessItem} />
+                <PortfolioUtils type="item" {...item as LabelessItem} />
               </li>
             );
           })}

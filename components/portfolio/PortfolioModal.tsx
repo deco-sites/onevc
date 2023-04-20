@@ -1,9 +1,9 @@
 import Image from "deco-sites/std/components/Image.tsx";
-import { colorHandler } from "./Item.tsx";
+import { colorHandler } from "./PortfolioItem.tsx";
 import type { LabelessItem as Props } from "./types.ts";
 import { replaceBreakLines } from "deco-sites/onevc/sdk/format.tsx";
 
-export function ItemModal({ image, content }: Props) {
+export function PortfolioModal({ image, content }: Props) {
   return (
     <>
       <div class="md:(flex flex-row gap-x-[20px] items-center p-[60px]) px-[28px] pt-[60px] pb-[80px] w-full text-white">
