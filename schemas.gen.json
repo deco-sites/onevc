@@ -3978,6 +3978,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0ludmVzdG1lbnRVdGlscy50c3g=": {
+      "title": "./islands/InvestmentUtils.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/InvestmentUtils.tsx"
+          ],
+          "default": "./islands/InvestmentUtils.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1Byb2dyZXNzLnRzeA==": {
       "title": "./islands/Progress.tsx",
       "type": "object",
@@ -4355,6 +4371,22 @@
             "deco-sites/onevc/sections/CookieConsent.tsx"
           ],
           "default": "deco-sites/onevc/sections/CookieConsent.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9JbnZlc3RtZW50VGhlc2lzLnRzeA==": {
+      "title": "deco-sites/onevc/sections/InvestmentThesis.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "deco-sites/onevc/sections/InvestmentThesis.tsx"
+          ],
+          "default": "deco-sites/onevc/sections/InvestmentThesis.tsx"
         }
       }
     },
@@ -4962,6 +4994,9 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL05hdmJhci50c3g="
         },
         {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0ludmVzdG1lbnRVdGlscy50c3g="
+        },
+        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1Byb2dyZXNzLnRzeA=="
         },
         {
@@ -5044,6 +5079,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Db29raWVDb25zZW50LnRzeA=="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9JbnZlc3RtZW50VGhlc2lzLnRzeA=="
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9Qb3J0Zm9saW8udHN4"
