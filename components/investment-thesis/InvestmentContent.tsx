@@ -39,7 +39,6 @@ export function Content({ text, items }: Props) {
     "-webkit-transition":
       "opacity .5s ease-out, left .5s ease-out, top .5s ease-out",
     "transition": "opacity .5s ease-out, left .5s ease-out, top .5s ease-out",
-    "transition-delay": "500ms",
   }));
 
   const showElements = (direction: string) =>
@@ -57,7 +56,7 @@ export function Content({ text, items }: Props) {
 
   const listClasses = tw`${
     visible.value ? showElements("top") : hideElements("top")
-  } ${commonClasses}`;
+  } ${commonClasses} flex flex-row flex-nowrap`;
 
   return (
     <>
