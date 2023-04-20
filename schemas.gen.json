@@ -2036,9 +2036,6 @@
       ],
       "title": "deco-sites/std/commerce/occ/client.ts@ConfigOCC"
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@LabelessItem": {
-      "title": "deco-sites/onevc/components/portfolio/types.ts@LabelessItem"
-    },
     "ZGVjby1jeC9saXZlL2Jsb2Nrcy9mbGFnLnRz@Flag": {
       "$ref": "#/root/flags"
     },
@@ -2675,6 +2672,53 @@
       "required": [],
       "title": "deco-sites/onevc/components/footer/Footer.tsx@Props"
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2ludmVzdG1lbnQtdGhlc2lzL0ludmVzdG1lbnRUaGVzaXMudHN4@Item": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description"
+        },
+        "image": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9zdGQvY29tcG9uZW50cy90eXBlcy50cw==@Image",
+          "title": "Image"
+        }
+      },
+      "required": [
+        "label",
+        "description",
+        "image"
+      ],
+      "title": "Item"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2ludmVzdG1lbnQtdGhlc2lzL0ludmVzdG1lbnRUaGVzaXMudHN4@Item[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2ludmVzdG1lbnQtdGhlc2lzL0ludmVzdG1lbnRUaGVzaXMudHN4@Item"
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2ludmVzdG1lbnQtdGhlc2lzL0ludmVzdG1lbnRUaGVzaXMudHN4@Props": {
+      "type": "object",
+      "properties": {
+        "initialText": {
+          "type": "string",
+          "title": "Initial Text"
+        },
+        "items": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2ludmVzdG1lbnQtdGhlc2lzL0ludmVzdG1lbnRUaGVzaXMudHN4@Item[]",
+          "title": "Items"
+        }
+      },
+      "required": [
+        "initialText",
+        "items"
+      ],
+      "title": "deco-sites/onevc/components/investment-thesis/InvestmentThesis.tsx@Props"
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Section": {
       "type": "object",
       "properties": {
@@ -2996,6 +3040,14 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemContent",
           "description": "Modal content settings",
           "title": "Content"
+        },
+        "filterKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "title": "Filter Key",
+          "description": "This value will link with the filters setup"
         }
       },
       "required": [
@@ -3011,6 +3063,30 @@
         "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item"
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Filter": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string",
+          "title": "Label"
+        },
+        "key": {
+          "type": "string",
+          "title": "Key"
+        }
+      },
+      "required": [
+        "label",
+        "key"
+      ],
+      "title": "Filter"
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Filter[]": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Filter"
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby9Qb3J0Zm9saW8udHN4@Props": {
       "type": "object",
       "properties": {
@@ -3021,6 +3097,10 @@
         "items": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Item[]",
           "title": "Items"
+        },
+        "filters": {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@Filter[]",
+          "title": "Filters"
         }
       },
       "required": [
@@ -4042,27 +4122,6 @@
         }
       }
     },
-    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0l0ZW0udHN4": {
-      "title": "./islands/Item.tsx",
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@LabelessItem"
-        }
-      ],
-      "required": [
-        "__resolveType"
-      ],
-      "properties": {
-        "__resolveType": {
-          "type": "string",
-          "enum": [
-            "./islands/Item.tsx"
-          ],
-          "default": "./islands/Item.tsx"
-        }
-      }
-    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
       "title": "./islands/SliderJS.tsx",
       "type": "object",
@@ -4108,6 +4167,22 @@
             "./islands/HeroUtils.tsx"
           ],
           "default": "./islands/HeroUtils.tsx"
+        }
+      }
+    },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1BvcnRmb2xpb1V0aWxzLnRzeA==": {
+      "title": "./islands/PortfolioUtils.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/PortfolioUtils.tsx"
+          ],
+          "default": "./islands/PortfolioUtils.tsx"
         }
       }
     },
@@ -4377,6 +4452,11 @@
     "ZGVjby1zaXRlcy9vbmV2Yy9zZWN0aW9ucy9JbnZlc3RtZW50VGhlc2lzLnRzeA==": {
       "title": "deco-sites/onevc/sections/InvestmentThesis.tsx",
       "type": "object",
+      "allOf": [
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL2ludmVzdG1lbnQtdGhlc2lzL0ludmVzdG1lbnRUaGVzaXMudHN4@Props"
+        }
+      ],
       "required": [
         "__resolveType"
       ],
@@ -5006,9 +5086,6 @@
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
         },
         {
-          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0l0ZW0udHN4"
-        },
-        {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
         },
         {
@@ -5016,6 +5093,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0hlcm9VdGlscy50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1BvcnRmb2xpb1V0aWxzLnRzeA=="
         }
       ]
     },

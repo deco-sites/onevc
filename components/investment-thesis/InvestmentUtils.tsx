@@ -29,7 +29,7 @@ function InvestmentUtils({ type, ...props }: Props) {
       () => <Item {...props as ItemProps} />,
     ),
     method("content", () => <Content {...props as ContentProps} />),
-  )(() => null);
+  )(() => <></>);
 
   return component(type) as JSX.Element;
 }

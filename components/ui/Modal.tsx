@@ -58,8 +58,6 @@ const Modal = ({
     }
   }, [open]);
 
-  console.log(ref.current?.open);
-
   return (
     <dialog
       {...props}

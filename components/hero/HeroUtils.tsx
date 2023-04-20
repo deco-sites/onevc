@@ -31,7 +31,7 @@ function HeroUtils({ type, ...props }: Props) {
       () => <HeroPicture {...props as UtilsHeroPictureProps} />,
     ),
     method("scroll-text", () => <HeroScroll />),
-  )(() => null);
+  )(() => <></>);
 
   return component(type) as JSX.Element;
 }

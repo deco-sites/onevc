@@ -1,11 +1,12 @@
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import { Title } from "deco-sites/onevc/components/ui/Title.tsx";
 import InvestmentUtils from "deco-sites/onevc/islands/InvestmentUtils.tsx";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Item {
   label: string;
   description: string;
-  image: string;
+  image: LiveImage;
 }
 
 export interface Props {

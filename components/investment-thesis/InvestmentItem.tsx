@@ -1,4 +1,5 @@
 import { Item } from "deco-sites/onevc/components/investment-thesis/InvestmentThesis.tsx";
+import { replaceBreakLines } from "deco-sites/onevc/sdk/format.tsx";
 
 export interface Props {
   index: number;
@@ -15,12 +16,12 @@ export function Item({ index, item }: Props) {
       <article>
         <header>
           <span>
-            {itemNum <= 9 ? (`${itemNum}`).padStart(0) : itemNum}.
+            {(`${itemNum}`).padStart(2, "0")}.
           </span>
           <h3>{item.label}</h3>
         </header>
 
-        <div>{item.description}</div>
+        <div>{replaceBreakLines(item.description)}</div>
       </article>
     </li>
   );

@@ -27,7 +27,7 @@ function PortfolioUtils({ type, ...props }: Props) {
       "item",
       () => <Item {...props as ItemProps} />,
     ),
-  )(() => null);
+  )(() => <></>);
 
   return component(type) as JSX.Element;
 }

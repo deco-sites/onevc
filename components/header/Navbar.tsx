@@ -2,7 +2,7 @@ import type { Props as MenuProps } from "deco-sites/onevc/components/header/Menu
 import Container from "deco-sites/onevc/components/ui/Container.tsx";
 import type { Link } from "deco-sites/onevc/components/ui/SocialLinks.tsx";
 import SocialLinks from "deco-sites/onevc/components/ui/SocialLinks.tsx";
-import MenuButton from "deco-sites/onevc/islands/MenuButton.tsx";
+import MenuButton from "deco-sites/onevc/components/header/MenuButton.tsx";
 import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
 import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 import Menu from "./Menu.tsx";
