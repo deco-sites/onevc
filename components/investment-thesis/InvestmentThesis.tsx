@@ -16,7 +16,7 @@ export interface Props {
 
 function InvestmentThesis({ initialText, items }: Props) {
   return (
-    <div id="investment-thesis" class="relative">
+    <div id="investment-thesis" class="relative mt-[40px]">
       <Title>Investment Thesis</Title>
       {items.map((item, index) => (
         <InvestmentUtils type="image" item={item} index={index} key={index} />
