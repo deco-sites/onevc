@@ -19,12 +19,12 @@ export function Item({ index, item }: Props) {
     displayTab.value === index ? horizontalTitle : verticalTitle
   } whitespace-nowrap transition-transform duration-[200ms] ease-out origin-bottom-left text-[18px] font-extrabold`;
 
-  const openItem = tw`override:(md:(w-[375px]) h-full w-full max-h-[500px])`;
-  const closeItem = tw`override:(md:(w-[112px]) h-full w-full max-h-[72px])`;
+  const openItem = tw`override:(md:(w-[375px] max-h-full) h-full w-full max-h-[500px])`;
+  const closeItem = tw`override:(md:(w-[112px] max-h-full) h-full w-full max-h-[72px])`;
 
   const itemClasses = tw`${
     displayTab.value === index ? openItem : closeItem
-  } overflow-hidden md:transition-['width'] transition-['max-height'] duration-[400ms] delay-[150ms] md:delay-[100ms] py-[25px] px-[15px] border-t-1 last-child:border-b-1 md:(py-[16px] px-[42px] border-t-none border-b-none border-l-1 last-child:border-r-1) border-[#cccccc]`;
+  } overflow-hidden md:transition-['width'] transition-['max-height'] duration-[400ms] delay-[150ms] py-[25px] px-[15px] border-t-1 last-child:border-b-1 md:(py-[16px] px-[42px] delay-[100ms] border-t-none border-b-none border-l-1 last-child:border-r-1) border-[#cccccc]`;
 
   const descriptionTransition = tw(() => ({
     "-webkit-transition": "opacity .2s ease-out .65s, width .2s ease-out",
