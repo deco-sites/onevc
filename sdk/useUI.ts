@@ -24,7 +24,7 @@ const state = {
   isScrolled,
   displayMenu,
   investmentTab,
-  portfolioTab
+  portfolioTab,
 };
 
 export const useUI = () => state;

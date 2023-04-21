@@ -17,7 +17,12 @@ export function Filter({ filters }: Props) {
           tw`font-bold`;
 
         return (
-          <li class={`mt-[14px] md:(${index > 0 && 'border-l-1 border-black pl-[10px]'})`} data-type="FIL">
+          <li
+            class={`mt-[14px] md:(${
+              index > 0 && "border-l-1 border-black pl-[10px]"
+            })`}
+            data-type="FIL"
+          >
             <Button
               variant="icon"
               onClick={() => portfolioTab.value = index}
