@@ -7,6 +7,7 @@ import { signal } from "@preact/signals";
 
 const displayMenu = signal(false);
 const isScrolled = signal(false);
+const isLoaded = signal(false);
 const investmentTab = signal<null | number>(null);
 const portfolioTab = signal<null | number>(null);
 
@@ -18,11 +19,15 @@ const scrollEvent = () => {
 };
 
 globalThis.addEventListener("scroll", scrollEvent);
-globalThis.addEventListener("load", scrollEvent);
+globalThis.addEventListener("load", () => {
+  scrollEvent();
+  isLoaded.value = true;
+});
 
 const state = {
   isScrolled,
   displayMenu,
+  isLoaded,
 };
 
 export const useInvestmentTab = () => investmentTab;

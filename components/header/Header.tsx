@@ -1,6 +1,7 @@
 import Navbar from "deco-sites/onevc/islands/Navbar.tsx";
 import { Link } from "deco-sites/onevc/components/ui/SocialLinks.tsx";
 import Progress from "deco-sites/onevc/islands/Progress.tsx";
+import LoadingScreen from "deco-sites/onevc/islands/LoadingScreen.tsx";
 
 export interface NavItem {
   label: string;
@@ -34,6 +35,7 @@ function Header(
       <Navbar menu={{ items: navItems }} links={links} />
       <div class="lg:hidden md:(h-[77px] block) hidden" />
       <Progress />
+      <LoadingScreen />
     </>
   );
 }
