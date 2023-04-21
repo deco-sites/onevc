@@ -3071,8 +3071,9 @@
           "title": "Label"
         },
         "key": {
-          "type": "string",
-          "title": "Key"
+          "type": "number",
+          "title": "Key",
+          "description": "This field shoud be unique and will match with items if there is almost one."
         }
       },
       "required": [

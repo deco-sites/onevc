@@ -91,5 +91,9 @@ export interface Section {
 
 export interface Filter {
   label: string;
-  key: string;
+  /**
+   * @title Filter identifier 
+   * @description This field shoud be unique and will match with items if there is almost one.
+   */
+  key: number;
 }
