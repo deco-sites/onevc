@@ -28,11 +28,11 @@ export function Item({ index, item }: Props) {
     displayTab.value === index ? openItem : closeItem
   } overflow-hidden md:transition-['width'] transition-['max-height'] duration-[400ms] delay-[150ms] py-[25px] px-[15px] border-t-1 last-child:border-b-1 md:(py-[16px] px-[42px] delay-[100ms] border-t-none border-b-none border-l-1 last-child:border-r-1) border-[#cccccc]`;
 
+  const transitionDelay = displayTab.value !== index ? "0s" : ".5s";
   const descriptionTransition = tw(() => ({
-    "-webkit-transition": "opacity .2s ease-out .65s, width .2s ease-out",
-    "transition": `opacity .1s ease-out ${
-      displayTab.value !== index ? "0s" : ".5s"
-    }, width .2s ease-out`,
+    "-webkit-transition":
+      `opacity .2s ease-out ${transitionDelay}, width .2s ease-out`,
+    "transition": `opacity .2s ease-out ${transitionDelay}, width .2s ease-out`,
   }));
 
   return (
@@ -43,7 +43,7 @@ export function Item({ index, item }: Props) {
       <Button
         variant="icon"
         onClick={() => displayTab.value = index}
-        class={`block rounded-none text-left w-full override:h-auto`}
+        class="block rounded-none text-left w-full override:h-auto"
       >
         <article>
           <header class="flex flex-row flex-wrap gap-[5px] md:(gap-0 block)">
@@ -54,12 +54,10 @@ export function Item({ index, item }: Props) {
           </header>
 
           <div
-            class={`md:${descriptionTransition} transition-['opacity'] duration-200 delay-[${
-              displayTab.value !== index ? "0s" : ".5s"
-            }] ease-out ${
+            class={`${descriptionTransition} w-full ${
               displayTab.value === index
-                ? "w-full md:w-[250px] opacity-100 delay-[500ms]"
-                : "w-full md:w-[112px] opacity-0"
+                ? "md:w-[250px] opacity-100"
+                : "md:w-[112px] opacity-0"
             } children:(my-[15px])`}
           >
             {replaceBreakLines(item.description)}
