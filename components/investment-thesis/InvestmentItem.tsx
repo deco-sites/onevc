@@ -19,8 +19,10 @@ export function Item({ index, item }: Props) {
     displayTab.value === index ? horizontalTitle : verticalTitle
   } whitespace-nowrap transition-transform duration-[200ms] ease-out origin-bottom-left text-[18px] font-extrabold`;
 
-  const openItem = tw`override:(md:(w-[375px] max-h-full) h-full w-full max-h-[500px])`;
-  const closeItem = tw`override:(md:(w-[112px] max-h-full) h-full w-full max-h-[72px])`;
+  const openItem =
+    tw`override:(md:(w-[375px] max-h-full) h-full w-full max-h-[500px])`;
+  const closeItem =
+    tw`override:(md:(w-[112px] max-h-full) h-full w-full max-h-[72px])`;
 
   const itemClasses = tw`${
     displayTab.value === index ? openItem : closeItem
