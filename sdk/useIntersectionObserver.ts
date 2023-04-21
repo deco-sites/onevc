@@ -28,7 +28,6 @@ const useIntersectionObserver = <T extends Element = Element>(
       defaultOptions,
     );
 
-
     intersectionObserver.observe(target.current);
     return () => intersectionObserver.disconnect();
   }, [target.current]);
