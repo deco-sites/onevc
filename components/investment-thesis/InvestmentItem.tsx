@@ -10,13 +10,13 @@ export interface Props {
 }
 
 export function Item({ index, item }: Props) {
-  const { displayTab } = useUI();
+  const { investmentTab } = useUI();
 
   const horizontalTitle = tw`md:rotate-0`;
   const verticalTitle = tw`md:rotate-90`;
 
   const titleClasses = tw`${
-    displayTab.value === index ? horizontalTitle : verticalTitle
+    investmentTab.value === index ? horizontalTitle : verticalTitle
   } whitespace-nowrap transition-transform duration-[200ms] ease-out origin-bottom-left text-[18px] font-extrabold`;
 
   const openItem =
@@ -25,10 +25,10 @@ export function Item({ index, item }: Props) {
     tw`override:(md:(w-[112px] max-h-full) h-full w-full max-h-[72px])`;
 
   const itemClasses = tw`${
-    displayTab.value === index ? openItem : closeItem
+    investmentTab.value === index ? openItem : closeItem
   } overflow-hidden md:transition-['width'] transition-['max-height'] duration-[400ms] delay-[150ms] py-[25px] px-[15px] border-t-1 last-child:border-b-1 md:(py-[16px] px-[42px] delay-[100ms] border-t-none border-b-none border-l-1 last-child:border-r-1) border-[#cccccc]`;
 
-  const transitionDelay = displayTab.value !== index ? "0s" : ".5s";
+  const transitionDelay = investmentTab.value !== index ? "0s" : ".5s";
   const descriptionTransition = tw(() => ({
     "-webkit-transition":
       `opacity .2s ease-out ${transitionDelay}, width .2s ease-out`,
@@ -42,7 +42,7 @@ export function Item({ index, item }: Props) {
     >
       <Button
         variant="icon"
-        onClick={() => displayTab.value = index}
+        onClick={() => investmentTab.value = index}
         class="block rounded-none text-left w-full override:h-auto"
       >
         <article>
@@ -55,7 +55,7 @@ export function Item({ index, item }: Props) {
 
           <div
             class={`${descriptionTransition} w-full ${
-              displayTab.value === index
+              investmentTab.value === index
                 ? "md:w-[250px] opacity-100"
                 : "md:w-[112px] opacity-0"
             } children:(my-[15px])`}

@@ -9,20 +9,20 @@ export interface Props {
 }
 
 export function Image({ index, item }: Props) {
-  const { displayTab } = useUI();
+  const { investmentTab } = useUI();
   const animate = useSignal(false);
-  const previousTab = useRef(displayTab.value);
+  const previousTab = useRef(investmentTab.value);
 
   useLayoutEffect(() => {
     previousTab.current = index;
 
-    if (displayTab.value !== index) {
+    if (investmentTab.value !== index) {
       animate.value = false;
       return;
     }
 
     animate.value = true;
-  }, [displayTab.value]);
+  }, [investmentTab.value]);
 
   return (
     <img

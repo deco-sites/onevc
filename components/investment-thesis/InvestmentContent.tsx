@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export function Content({ text, items }: Props) {
-  const { displayTab } = useUI();
+  const { investmentTab } = useUI();
   const visible = useSignal(false);
   const ref = useRef<HTMLUListElement>(null);
 
@@ -50,7 +50,7 @@ export function Content({ text, items }: Props) {
   const textClasses = tw`${
     visible.value ? showElements("left") : hideElements("left")
   } ${
-    displayTab.value !== null && `md:${hideElements("left")}`
+    investmentTab.value !== null && `md:${hideElements("left")}`
   } ${commonClasses} font-bold text-[19px] leading-[23px] mb-[40px] md:(text-[30px] leading-[37px] mb-0)`;
 
   const listClasses = tw`${

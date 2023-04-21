@@ -7,7 +7,7 @@ import { signal } from "@preact/signals";
 
 const displayMenu = signal(false);
 const isScrolled = signal(false);
-const displayTab = signal<null | number>(null);
+const investmentTab = signal<null | number>(null);
 
 const scrollEvent = () => {
   if (globalThis.scrollY === 0) {
@@ -22,7 +22,7 @@ globalThis.addEventListener("load", scrollEvent);
 const state = {
   isScrolled,
   displayMenu,
-  displayTab,
+  investmentTab,
 };
 
 export const useUI = () => state;
