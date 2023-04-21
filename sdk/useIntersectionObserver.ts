@@ -15,22 +15,23 @@ const useIntersectionObserver = <T extends Element = Element>(
     ...options,
   };
 
-  const intersectionObserver = IS_BROWSER && new IntersectionObserver(
-    (entries: IntersectionObserverEntry[]) => {
-      visible.value = entries[0].isIntersecting;
-      if (executeOnce) {
-        (intersectionObserver as IntersectionObserver).disconnect();
-      }
-    },
-    defaultOptions,
-  );
-
   useEffect(() => {
-    if (!target.current || !intersectionObserver) return;
+    if (!target.current || !IS_BROWSER) return;
+
+    const intersectionObserver = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[], observer) => {
+        visible.value = entries[0].isIntersecting;
+        if (executeOnce && entries[0].isIntersecting) {
+          observer.disconnect();
+        }
+      },
+      defaultOptions,
+    );
+
 
     intersectionObserver.observe(target.current);
     return () => intersectionObserver.disconnect();
-  }, [target.current, intersectionObserver]);
+  }, [target.current]);
 
   return visible.value;
 };
