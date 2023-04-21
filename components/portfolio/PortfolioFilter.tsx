@@ -1,5 +1,7 @@
 import Button from "deco-sites/onevc/components/ui/Button.tsx";
-import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
+import { usePortfolioTab } from "deco-sites/onevc/sdk/useUI.ts";
+import useIntersectionObserver from "deco-sites/onevc/sdk/useIntersectionObserver.ts";
+import { useEffect, useRef } from "preact/compat";
 import { tw } from "twind/css";
 import { Filter } from "./types.ts";
 
@@ -8,10 +10,22 @@ export interface Props {
 }
 
 export function Filter({ filters }: Props) {
-  const { portfolioTab } = useUI();
+  const portfolioTab = usePortfolioTab();
+  const ref = useRef(null);
+
+  const isVisible = useIntersectionObserver(ref, true);
+
+  useEffect(() => {
+    if (!isVisible) return;
+
+    portfolioTab.value = 0;
+  }, [isVisible]);
 
   return (
-    <ul class="flex flex-col md:(flex-row gap-[10px] pl-[calc(10%+10px)])">
+    <ul
+      class="flex flex-col md:(flex-row gap-[10px] pl-[calc(10%+10px)])"
+      ref={ref}
+    >
       {filters.map((item, index) => {
         const selectedClasses = portfolioTab.value === index &&
           tw`font-bold`;

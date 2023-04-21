@@ -63,7 +63,7 @@ export interface Item {
   /**
    * @description This value will link with the filters setup
    */
-  filterKey?: string;
+  filterKey?: number;
 }
 
 export type LabelessItem = Omit<Item, "label">;

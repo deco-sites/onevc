@@ -1,7 +1,7 @@
 import type { Props as FilterProps } from "deco-sites/onevc/components/portfolio/PortfolioFilter.tsx";
 import { Filter } from "deco-sites/onevc/components/portfolio/PortfolioFilter.tsx";
+import type { Props as ItemProps } from "deco-sites/onevc/components/portfolio/PortfolioItem.tsx";
 import { Item } from "deco-sites/onevc/components/portfolio/PortfolioItem.tsx";
-import type { LabelessItem as ItemProps } from "deco-sites/onevc/components/portfolio/types.ts";
 import { method, multi } from "deco-sites/onevc/sdk/multi.ts";
 import { JSX } from "preact";
 

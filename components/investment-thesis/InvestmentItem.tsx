@@ -1,7 +1,7 @@
 import { Item } from "deco-sites/onevc/components/investment-thesis/InvestmentThesis.tsx";
 import Button from "deco-sites/onevc/components/ui/Button.tsx";
 import { replaceBreakLines } from "deco-sites/onevc/sdk/format.tsx";
-import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
+import { useInvestmentTab } from "deco-sites/onevc/sdk/useUI.ts";
 import { tw } from "twind/css";
 
 export interface Props {
@@ -10,7 +10,7 @@ export interface Props {
 }
 
 export function Item({ index, item }: Props) {
-  const { investmentTab } = useUI();
+  const investmentTab = useInvestmentTab();
 
   const horizontalTitle = tw`md:rotate-0`;
   const verticalTitle = tw`md:rotate-90`;

@@ -1,5 +1,5 @@
 import { Item } from "deco-sites/onevc/components/investment-thesis/InvestmentThesis.tsx";
-import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
+import { useInvestmentTab } from "deco-sites/onevc/sdk/useUI.ts";
 import { useSignal } from "@preact/signals";
 import { useLayoutEffect, useRef } from "preact/compat";
 
@@ -9,7 +9,7 @@ export interface Props {
 }
 
 export function Image({ index, item }: Props) {
-  const { investmentTab } = useUI();
+  const investmentTab = useInvestmentTab();
   const animate = useSignal(false);
   const previousTab = useRef(investmentTab.value);
 

@@ -3043,7 +3043,7 @@
         },
         "filterKey": {
           "type": [
-            "string",
+            "number",
             "null"
           ],
           "title": "Filter Key",

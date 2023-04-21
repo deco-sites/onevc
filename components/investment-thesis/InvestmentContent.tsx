@@ -1,7 +1,7 @@
 import type { Item } from "deco-sites/onevc/components/investment-thesis/InvestmentThesis.tsx";
 import InvestmentUtils from "deco-sites/onevc/components/investment-thesis/InvestmentUtils.tsx";
 import { replaceBreakLines } from "deco-sites/onevc/sdk/format.tsx";
-import { useUI } from "deco-sites/onevc/sdk/useUI.ts";
+import { useInvestmentTab } from "deco-sites/onevc/sdk/useUI.ts";
 import { useSignal } from "@preact/signals";
 import { useEffect, useRef } from "preact/compat";
 import { tw } from "twind/css";
@@ -13,7 +13,7 @@ export interface Props {
 }
 
 export function Content({ text, items }: Props) {
-  const { investmentTab } = useUI();
+  const investmentTab = useInvestmentTab();
   const visible = useSignal(false);
   const ref = useRef<HTMLUListElement>(null);
 

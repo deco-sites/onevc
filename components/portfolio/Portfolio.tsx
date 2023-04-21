@@ -66,7 +66,7 @@ function Portfolio({
         : null}
       <Container class={`${containerClasses} ${handleSpacing(spacing)}`}>
         <ul
-          class={`flex flex-wrap ${
+          class={`flex flex-wrap min-h-[217px] ${
             containerSize === "container" ? "px-[10%] gap-y-[20px]" : ""
           }`}
         >
@@ -80,17 +80,19 @@ function Portfolio({
             }%] w-full)`;
 
             return (
-              <li
-                class={`${responsivityClasses} ${
+              <PortfolioUtils
+                type="item"
+                key={index}
+                index={index}
+                shouldRespectsFilter={!!filters?.length}
+                _class={`${responsivityClasses} ${
                   (firstItemLastRow > index ||
                       firstItemLastRow > index) && itemsJustify === "justify"
                     ? justifyClasses
                     : ""
                 }`}
-                key={index}
-              >
-                <PortfolioUtils type="item" {...item as LabelessItem} />
-              </li>
+                {...item as LabelessItem}
+              />
             );
           })}
         </ul>
