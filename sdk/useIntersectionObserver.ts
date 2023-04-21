@@ -5,7 +5,7 @@ import { IS_BROWSER } from "$fresh/runtime.ts";
 const useIntersectionObserver = <T extends Element = Element>(
   target: React.RefObject<T>,
   executeOnce?: boolean,
-  options?: IntersectionObserverInit & { executeOnce: boolean },
+  options?: IntersectionObserverInit,
 ): boolean => {
   const visible = useSignal<boolean>(false);
   const defaultOptions = {

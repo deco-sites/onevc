@@ -1,11 +1,11 @@
+import { IS_BROWSER } from "$fresh/runtime.ts";
 import type { Item } from "deco-sites/onevc/components/investment-thesis/InvestmentThesis.tsx";
 import InvestmentUtils from "deco-sites/onevc/components/investment-thesis/InvestmentUtils.tsx";
 import { replaceBreakLines } from "deco-sites/onevc/sdk/format.tsx";
+import useIntersectionObserver from "deco-sites/onevc/sdk/useIntersectionObserver.ts";
 import { useInvestmentTab } from "deco-sites/onevc/sdk/useUI.ts";
-import { useSignal } from "@preact/signals";
 import { useEffect, useRef } from "preact/compat";
 import { tw } from "twind/css";
-import { IS_BROWSER } from "$fresh/runtime.ts";
 
 export interface Props {
   text: string;
@@ -14,25 +14,8 @@ export interface Props {
 
 export function Content({ text, items }: Props) {
   const investmentTab = useInvestmentTab();
-  const visible = useSignal(false);
   const ref = useRef<HTMLUListElement>(null);
-
-  useEffect(() => {
-    if (!ref.current || !IS_BROWSER) return;
-
-    const intersectionObserver = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        visible.value = entries[0].isIntersecting;
-        if (entries[0].isIntersecting) {
-          intersectionObserver.disconnect();
-        }
-      },
-      { root: null, rootMargin: "0px", threshold: 1 },
-    );
-
-    intersectionObserver.observe(ref.current);
-    return () => intersectionObserver.disconnect();
-  }, [ref.current]);
+  const visible = useIntersectionObserver(ref, true);
 
   const transition = tw(() => ({
     "-webkit-transition":
@@ -48,13 +31,13 @@ export function Content({ text, items }: Props) {
   const commonClasses = tw`${transition} relative`;
 
   const textClasses = tw`${
-    visible.value ? showElements("left") : hideElements("left")
+    visible ? showElements("left") : hideElements("left")
   } ${
     investmentTab.value !== null && `md:${hideElements("left")}`
   } ${commonClasses} font-bold text-[19px] leading-[23px] mb-[40px] md:(text-[30px] leading-[37px] mb-0)`;
 
   const listClasses = tw`${
-    visible.value ? showElements("top") : hideElements("top")
+    visible ? showElements("top") : hideElements("top")
   } ${commonClasses} md:flex flex-row flex-nowrap justiry-start`;
 
   return (
