@@ -19,7 +19,7 @@ const useIntersectionObserver = <T extends Element = Element>(
     (entries: IntersectionObserverEntry[]) => {
       visible.value = entries[0].isIntersecting;
       if (executeOnce) {
-        (intersectionObserver as IntersectionObserver).disconnect()
+        (intersectionObserver as IntersectionObserver).disconnect();
       }
     },
     defaultOptions,
