@@ -9,7 +9,7 @@ export interface Detail {
   label: string;
   /**
    * @title Detail content
-   * @description To add a new line into the text use \n
+   * @description To add a new line into the text use <br>
    */
   value: string;
 }
@@ -53,11 +53,11 @@ export interface Item {
    */
   label: string;
   /**
-   * @description Image settings
+   * @title Image item
    */
   image: ItemImage;
   /**
-   * @description Modal content settings
+   * @title Modal content
    */
   content: ItemContent;
   /**

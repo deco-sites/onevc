@@ -2945,7 +2945,7 @@
         "value": {
           "type": "string",
           "title": "Value",
-          "description": "To add a new line into the text use \\n"
+          "description": "To add a new line into the text use <br>"
         }
       },
       "required": [
@@ -3033,12 +3033,10 @@
         },
         "image": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemImage",
-          "description": "Image settings",
           "title": "Image"
         },
         "content": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3BvcnRmb2xpby90eXBlcy50cw==@ItemContent",
-          "description": "Modal content settings",
           "title": "Content"
         },
         "filterKey": {
