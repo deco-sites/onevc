@@ -18,7 +18,7 @@ export function Filter({ filters }: Props) {
   useEffect(() => {
     if (!isVisible) return;
 
-    portfolioTab.value = 0;
+    portfolioTab.value = 1;
   }, [isVisible]);
 
   return (

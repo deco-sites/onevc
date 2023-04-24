@@ -93,7 +93,7 @@ export interface Filter {
   label: string;
   /**
    * @title Filter identifier
-   * @description This field shoud be unique and will match with items if there is almost one.
+   * @description This field shoud be unique and will match with items if there is almost one. Starts in 1
    */
   key: number;
 }
