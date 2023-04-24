@@ -66,7 +66,7 @@ function Portfolio({
         : null}
       <Container class={`${containerClasses} ${handleSpacing(spacing)}`}>
         <ul
-          class={`flex flex-wrap min-h-[217px] ${
+          class={`flex flex-wrap justify-between min-h-[217px] ${
             containerSize === "container" ? "px-[10%] gap-y-[20px]" : ""
           }`}
         >
@@ -76,7 +76,7 @@ function Portfolio({
             const firstItems = array.length - firstItemLastRow;
 
             const justifyClasses = tw`override:(sm:w-[${
-              getPercentage(firstItems)
+              getPercentage(firstItems) - 3
             }%] w-full)`;
 
             return (
