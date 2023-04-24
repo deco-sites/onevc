@@ -17,7 +17,7 @@ export interface Props extends LabelessItem {
 
 export const colorHandler = multi<ItemImage, ImageColor, string>(
   (i) => i.imageColor,
-  method("invert" as ImageColor, () => tw`invert brightness-0`),
+  method("invert" as ImageColor, () => tw`white-image`),
   method("grayscale" as ImageColor, () => tw`grayscale`),
 )(() => "");
 

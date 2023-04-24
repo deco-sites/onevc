@@ -11,7 +11,9 @@ export function PortfolioModal({ image, content }: Props) {
           <div class={`${!content.title ? "border-b-1 border-white" : ""}`}>
             <Image
               loading="eager"
-              class={`${colorHandler(image)} max-w-full`}
+              class={`${
+                colorHandler({ ...image, imageColor: "invert" })
+              } max-w-full`}
               src={image.src}
               alt={image.alt}
               width={215}

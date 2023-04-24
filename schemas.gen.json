@@ -4123,6 +4123,22 @@
         }
       }
     },
+    "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0xvYWRpbmdTY3JlZW4udHN4": {
+      "title": "./islands/LoadingScreen.tsx",
+      "type": "object",
+      "required": [
+        "__resolveType"
+      ],
+      "properties": {
+        "__resolveType": {
+          "type": "string",
+          "enum": [
+            "./islands/LoadingScreen.tsx"
+          ],
+          "default": "./islands/LoadingScreen.tsx"
+        }
+      }
+    },
     "ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA==": {
       "title": "./islands/SliderJS.tsx",
       "type": "object",
@@ -5085,6 +5101,9 @@
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NlbmRFdmVudEJ1dHRvbi50c3g="
+        },
+        {
+          "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL0xvYWRpbmdTY3JlZW4udHN4"
         },
         {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9pc2xhbmRzL1NsaWRlckpTLnRzeA=="
