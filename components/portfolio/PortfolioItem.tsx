@@ -58,7 +58,7 @@ export function Item(
             <Button
               variant="icon"
               onClick={() => isOpen.value = true}
-              class={`flex rounded-none flex-col h-full w-full items-center group gap-0`}
+              class={`flex rounded-none flex-col h-full w-full items-center justify-start group gap-0`}
             >
               <div class="relative">
                 {image.hoverStyle === "button"

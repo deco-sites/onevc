@@ -75,6 +75,13 @@ function Portfolio({
               (Math.floor(array.length / desktopColumns) - 1);
             const firstItems = array.length - firstItemLastRow;
 
+            console.log({
+              firstItemLastRow,
+              firstItems,
+              desktopColumns,
+              length: array.length,
+            });
+
             const justifyClasses = tw`override:(sm:w-[${
               getPercentage(firstItems)
             }%] w-full)`;
@@ -86,8 +93,7 @@ function Portfolio({
                 index={index}
                 shouldRespectsFilter={!!filters?.length}
                 _class={`${responsivityClasses} ${
-                  (firstItemLastRow > index ||
-                      firstItemLastRow > index) && itemsJustify === "justify"
+                  firstItemLastRow <= index && itemsJustify === "justify"
                     ? justifyClasses
                     : ""
                 }`}
