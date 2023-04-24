@@ -58,7 +58,7 @@ export function Item({ index, item }: Props) {
               investmentTab.value === index
                 ? "md:w-[250px] opacity-100"
                 : "md:w-[112px] opacity-0"
-            } children:(my-[15px])`}
+            } children:(my-[15px] text-[15px] leading-[19px] text-[#666])`}
           >
             {replaceBreakLines(item.description)}
           </div>

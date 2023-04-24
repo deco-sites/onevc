@@ -34,7 +34,7 @@ export function Content({ text, items }: Props) {
     visible ? showElements("left") : hideElements("left")
   } ${
     investmentTab.value !== null && `md:${hideElements("left")}`
-  } ${commonClasses} font-bold text-[19px] leading-[23px] mb-[40px] md:(text-[30px] leading-[37px] mb-0)`;
+  } ${commonClasses} font-bold text text-[19px] leading-[23px] mb-[40px] w-[max-content] mx-auto md:(text-[30px] leading-[37px] mb-0 w-full)`;
 
   const listClasses = tw`${
     visible ? showElements("top") : hideElements("top")
