@@ -60,7 +60,7 @@ export function Item(
               onClick={() => isOpen.value = true}
               class={`flex rounded-none flex-col h-full w-full items-center justify-start group gap-0`}
             >
-              <div class="relative">
+              <div class="relative h-[215px] flex justify-center items-center">
                 {image.hoverStyle === "button"
                   ? (
                     <div class="flex items-center justify-center absolute top-0 left-0 group-hover:(h-full) w-full overflow-hidden h-[0%] z-10 bg-[rgba(85,85,85,0.92)] transition-all duration-[250ms] ease-out">
@@ -70,8 +70,8 @@ export function Item(
                     </div>
                   )
                   : null}
-                <Image
-                  class={`transition-all duration-[250] ease-out ${
+                <img
+                  class={`transition-all duration-[250] w-full h-auto max-w-[215px] max-h-[215px] ease-out ${
                     colorHandler(image)
                   } ${
                     image.hoverStyle === "zoom-in"
@@ -80,8 +80,6 @@ export function Item(
                   }`}
                   src={image.src}
                   alt={image.alt}
-                  width={215}
-                  height={215}
                 />
               </div>
               {image.label

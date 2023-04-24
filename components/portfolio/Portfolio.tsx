@@ -39,10 +39,10 @@ function Portfolio({
   }`;
 
   const responsivityClasses = responsivityType === "specific"
-    ? tw`lg:w-[${getPercentage(desktopColumns)}%] sm:w-[${
+    ? tw`lg:w-[${getPercentage(desktopColumns)}%] md:w-[${
       getPercentage(tabletColumns)
     }%] w-[${getPercentage(mobileColumns)}%]`
-    : tw`lg:w-[${getPercentage(desktopColumns)}%] sm:w-[${
+    : tw`lg:w-[${getPercentage(desktopColumns)}%] md:w-[${
       getPercentage(desktopColumns - 1)
     }%] w-[${getPercentage(desktopColumns - 2)}%]`;
 
