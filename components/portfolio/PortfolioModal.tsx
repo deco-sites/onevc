@@ -8,7 +8,13 @@ export function PortfolioModal({ image, content }: Props) {
     <>
       <div class="md:(flex flex-row gap-x-[20px] items-center p-[60px]) px-[28px] pt-[60px] pb-[80px] w-full text-white">
         <aside class="md:(w-[280px] pr-[20px]) lg:(w-[330px] pr-[50px]) w-full">
-          <div class={`${!content.title ? "border-b-1 border-white min-h-[100px] flex items-center" : ""}`}>
+          <div
+            class={`${
+              !content.title
+                ? "border-b-1 border-white min-h-[100px] flex items-center"
+                : ""
+            }`}
+          >
             <img
               class={`${
                 colorHandler({ ...image, imageColor: content.imageColor })
