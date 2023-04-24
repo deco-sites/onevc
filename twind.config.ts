@@ -201,7 +201,7 @@ const options: Omit<Options, "selfURL"> = {
     "brightness": {
       filter: "brightness(100%)",
     },
-    "white-image" : {
+    "white-image": {
       filter: "brightness(0) invert(1)",
     },
     "grayscale-0": {
