@@ -66,8 +66,8 @@ function Portfolio({
         : null}
       <Container class={`${containerClasses} ${handleSpacing(spacing)}`}>
         <ul
-          class={`flex flex-wrap justify-between min-h-[217px] ${
-            containerSize === "container" ? "px-[10%] gap-y-[20px]" : ""
+          class={`flex flex-wrap min-h-[217px] ${
+            containerSize === "container" ? "px-[10%] gap-y-[20px] justify-between" : ""
           }`}
         >
           {items.map((item, index, array) => {
