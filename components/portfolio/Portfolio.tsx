@@ -75,7 +75,7 @@ function Portfolio({
               (Math.floor(array.length / desktopColumns) - 1);
             const firstItems = array.length - firstItemLastRow;
 
-            const justifyClasses = tw`override:(sm:w-[${
+            const justifyClasses = tw`override:(md:w-[${
               getPercentage(firstItems) - 3
             }%] w-full)`;
 
