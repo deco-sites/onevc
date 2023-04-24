@@ -27,7 +27,7 @@ export function Filter({ filters }: Props) {
       ref={ref}
     >
       {filters.map((item, index) => {
-        const selectedClasses = portfolioTab.value === index &&
+        const selectedClasses = portfolioTab.value === item.key &&
           tw`font-bold`;
 
         return (
@@ -39,7 +39,7 @@ export function Filter({ filters }: Props) {
           >
             <Button
               variant="icon"
-              onClick={() => portfolioTab.value = index}
+              onClick={() => portfolioTab.value = item.key}
               class={`block h-auto rounded-none h-full w-full border-none items-center leading-[16px] ${selectedClasses}`}
             >
               {item.label}
