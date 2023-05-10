@@ -22,20 +22,19 @@ export interface Props {
    * @title Social links
    */
   links?: Link[];
+  /**
+   * @description Add a loading modal until the page loads?
+   */
+  initialLoading?: boolean;
 }
 
-function Header(
-  {
-    navItems = [],
-    links,
-  }: Props,
-) {
+function Header({ navItems = [], links, initialLoading = false }: Props) {
   return (
     <>
       <Navbar menu={{ items: navItems }} links={links} />
       <div class="lg:hidden md:(h-[77px] block) hidden" />
       <Progress />
-      <LoadingScreen />
+      {initialLoading ? <LoadingScreen /> : null}
     </>
   );
 }

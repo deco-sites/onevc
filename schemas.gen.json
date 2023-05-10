@@ -3150,6 +3150,14 @@
         "links": {
           "$ref": "#/definitions/ZGVjby1zaXRlcy9vbmV2Yy9jb21wb25lbnRzL3VpL1NvY2lhbExpbmtzLnRzeA==@Link[]",
           "title": "Links"
+        },
+        "initialLoading": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "title": "Initial Loading",
+          "description": "Add a loading modal until the page loads?"
         }
       },
       "required": [],
