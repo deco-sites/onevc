@@ -78,7 +78,7 @@ function Portfolio({
             const firstItems = array.length - firstItemLastRow;
 
             const justifyClasses = tw`override:(md:w-[${
-              getPercentage(firstItems) - 3
+              getPercentage(firstItems) - 5
             }%] w-full)`;
 
             return (
